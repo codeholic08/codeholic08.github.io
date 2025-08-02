@@ -614,27 +614,27 @@ body {
 }
 
 .aws-popup {
-    position: absolute !important;
-    top: 100% !important;
+    position: fixed !important;
+    top: 50% !important;
     left: 50% !important;
-    transform: translateX(-50%) translateY(10px) !important;
+    transform: translate(-50%, -50%) !important;
     background: var(--card-bg) !important;
     border: 2px solid var(--accent-primary) !important;
     border-radius: 12px !important;
     padding: 1rem !important;
-    box-shadow: 0 10px 30px var(--shadow-heavy) !important;
+    box-shadow: 0 20px 60px var(--shadow-heavy) !important;
     opacity: 0 !important;
     visibility: hidden !important;
     transition: all 0.3s ease !important;
-    z-index: 9999 !important;
-    width: 300px !important;
-    margin-top: 10px !important;
+    z-index: 99999 !important;
+    width: 320px !important;
+    backdrop-filter: blur(5px) !important;
 }
 
 .aws-skill:hover .aws-popup {
     opacity: 1 !important;
     visibility: visible !important;
-    transform: translateX(-50%) translateY(0) !important;
+    transform: translate(-50%, -50%) !important;
 }
 
 .aws-popup-content h4 {

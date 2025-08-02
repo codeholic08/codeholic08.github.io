@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
         awsSkill.addEventListener('mouseenter', function() {
             awsPopup.style.opacity = '1';
             awsPopup.style.visibility = 'visible';
-            awsPopup.style.transform = 'translateX(-50%) translateY(0)';
+            awsPopup.style.transform = 'translate(-50%, -50%)';
         });
         
         awsSkill.addEventListener('mouseleave', function() {
             awsPopup.style.opacity = '0';
             awsPopup.style.visibility = 'hidden';
-            awsPopup.style.transform = 'translateX(-50%) translateY(10px)';
+            awsPopup.style.transform = 'translate(-50%, -50%)';
         });
         
         awsSkill.addEventListener('click', function(e) {
@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (awsPopup.style.opacity === '1') {
                 awsPopup.style.opacity = '0';
                 awsPopup.style.visibility = 'hidden';
-                awsPopup.style.transform = 'translateX(-50%) translateY(10px)';
+                awsPopup.style.transform = 'translate(-50%, -50%)';
             } else {
                 awsPopup.style.opacity = '1';
                 awsPopup.style.visibility = 'visible';
-                awsPopup.style.transform = 'translateX(-50%) translateY(0)';
+                awsPopup.style.transform = 'translate(-50%, -50%)';
             }
         });
     }
