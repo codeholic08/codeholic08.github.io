@@ -195,9 +195,9 @@ body {
 
 .title-header {
     display: flex;
-    align-items: baseline;
-    flex-wrap: nowrap;
-    gap: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
     margin-bottom: 1rem;
 }
 
