@@ -351,7 +351,7 @@ body {
     border: 1px solid var(--skill-border);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .skill-category::before {
@@ -391,6 +391,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    overflow: visible !important;
+    position: relative;
 }
 
 .skill-item {
@@ -624,7 +626,7 @@ body {
     opacity: 0 !important;
     visibility: hidden !important;
     transition: all 0.3s ease !important;
-    z-index: 1000 !important;
+    z-index: 9999 !important;
     width: 300px !important;
     margin-top: 10px !important;
 }
