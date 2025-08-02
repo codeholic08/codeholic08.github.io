@@ -549,9 +549,6 @@ body {
 
 .company-logo {
     margin-bottom: 0.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
 }
 
 .company-logo .logo {
@@ -560,6 +557,8 @@ body {
     object-fit: contain;
     filter: grayscale(0.3);
     transition: filter 0.3s ease;
+    display: block;
+    margin-left: 0;
 }
 
 .company-logo .logo:hover {
@@ -571,6 +570,7 @@ body {
     max-width: 255px !important;
     margin-top: -8px !important;
     margin-bottom: -16px !important;
+    margin-left: 0 !important;
 }
 
 
