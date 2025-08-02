@@ -548,7 +548,7 @@ body {
 }
 
 .company-logo {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .company-logo .logo {
@@ -567,7 +567,7 @@ body {
     height: 75px !important;
     max-width: 255px !important;
     margin-top: -8px !important;
-    margin-bottom: -8px !important;
+    margin-bottom: -12px !important;
 }
 
 
