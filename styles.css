@@ -81,24 +81,12 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 70px;
 }
 
-.nav-logo a {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-primary);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-}
 
-.nav-logo a:hover {
-    color: var(--accent-secondary);
-    transform: translateY(-1px);
-}
 
 .nav-menu {
     display: flex;
