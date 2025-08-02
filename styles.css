@@ -277,15 +277,15 @@ body {
     object-fit: cover;
     border: 8px solid var(--card-bg);
     box-shadow: 0 20px 40px var(--shadow-medium);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.6s ease;
     opacity: 0;
     animation: fadeInScale 1s ease forwards 1.2s;
 }
 
 .profile-image img:hover {
-    transform: scale(1.2) rotate(8deg) !important;
-    box-shadow: 0 50px 100px var(--shadow-heavy) !important;
-    filter: brightness(1.15) contrast(1.1) !important;
+    transform: scale(1.08) rotate(2deg) !important;
+    box-shadow: 0 25px 50px var(--shadow-heavy) !important;
+    filter: brightness(1.05) !important;
     border-color: var(--accent-primary) !important;
     z-index: 10 !important;
     cursor: pointer !important;
