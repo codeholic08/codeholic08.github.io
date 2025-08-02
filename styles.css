@@ -195,9 +195,9 @@ body {
 
 .title-header {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
     margin-bottom: 1rem;
 }
 
@@ -214,13 +214,7 @@ body {
     animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
-.title-separator {
-    font-size: 2.5rem;
-    color: var(--accent-primary);
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeInUp 1s ease forwards 0.45s;
-}
+
 
 .subtitle {
     font-size: 1.25rem;
@@ -262,7 +256,7 @@ body {
     line-height: 1.7;
     color: var(--text-tertiary);
     transition: color 0.3s ease;
-    text-align: justify;
+    text-align: left;
 }
 
 @keyframes titleGlow {
@@ -1063,10 +1057,6 @@ body {
 
     .main-title {
         font-size: 2.2rem;
-    }
-
-    .title-separator {
-        display: none;
     }
 
     .subtitle {
