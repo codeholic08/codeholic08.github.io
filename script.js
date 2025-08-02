@@ -275,62 +275,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Cursor Following Effect (inspired by Brittany Chiang's site)
+// Gradient Cursor Effect (inspired by Brittany Chiang's site)
 document.addEventListener('DOMContentLoaded', function() {
-    let cursor = document.createElement('div');
-    cursor.className = 'cursor-follower';
-    document.body.appendChild(cursor);
-    
     // Get gradient cursor element
     const gradientCursor = document.getElementById('cursor-gradient');
     
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-    
     document.addEventListener('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        // Update gradient cursor position immediately (no delay for smoother effect)
+        // Update gradient cursor position immediately for smooth effect
         if (gradientCursor) {
-            gradientCursor.style.left = mouseX + 'px';
-            gradientCursor.style.top = mouseY + 'px';
+            gradientCursor.style.left = e.clientX + 'px';
+            gradientCursor.style.top = e.clientY + 'px';
         }
     });
     
-    function animateCursor() {
-        const delay = 0.1;
-        cursorX += (mouseX - cursorX) * delay;
-        cursorY += (mouseY - cursorY) * delay;
-        
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        
-        requestAnimationFrame(animateCursor);
-    }
-    
-    animateCursor();
-    
-    // Add cursor grow effect on hover
-    const hoverElements = document.querySelectorAll('a, button, .skill-item, .tech-tag, .course');
-    hoverElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursor.classList.add('cursor-grow');
-        });
-        element.addEventListener('mouseleave', () => {
-            cursor.classList.remove('cursor-grow');
-        });
-    });
-    
-    // Show cursor effects on mouse enter/leave
+    // Show/hide gradient cursor on mouse enter/leave
     document.addEventListener('mouseenter', () => {
-        cursor.style.opacity = '1';
+        if (gradientCursor) {
+            gradientCursor.style.opacity = '1';
+        }
     });
     
     document.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '0';
         if (gradientCursor) {
             gradientCursor.style.opacity = '0';
         }
