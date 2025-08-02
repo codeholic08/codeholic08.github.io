@@ -558,7 +558,7 @@ body {
     filter: grayscale(0.3);
     transition: filter 0.3s ease;
     display: block;
-    margin-left: -10px;
+    margin-left: -9px;
 }
 
 .company-logo .logo:hover {
@@ -570,7 +570,7 @@ body {
     max-width: 255px !important;
     margin-top: -8px !important;
     margin-bottom: -16px !important;
-    margin-left: -10px !important;
+    margin-left: -12px !important;
 }
 
 
