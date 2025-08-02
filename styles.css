@@ -604,6 +604,67 @@ body {
     opacity: 1;
 }
 
+/* AWS Skill Popup */
+.aws-skill {
+    position: relative;
+    cursor: pointer;
+}
+
+.aws-popup {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    border: 2px solid var(--accent-primary);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 10px 30px var(--shadow-heavy);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.aws-skill:hover .aws-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.aws-popup-content h4 {
+    color: var(--accent-primary);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.aws-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.aws-services span {
+    background: var(--skill-bg);
+    color: var(--text-tertiary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    text-align: center;
+    border: 1px solid var(--skill-border);
+    transition: all 0.3s ease;
+}
+
+.aws-services span:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: scale(1.05);
+}
+
 .barclays-logo {
     height: 75px !important;
     max-width: 255px !important;
