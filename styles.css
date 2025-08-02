@@ -571,6 +571,16 @@ body {
     filter: grayscale(0);
 }
 
+.company-logo a {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.company-logo a:hover {
+    transform: translateY(-2px);
+}
+
 .barclays-logo {
     height: 75px !important;
     max-width: 255px !important;
