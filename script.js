@@ -5,25 +5,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const awsPopup = document.getElementById('aws-popup');
     const awsBackdrop = document.querySelector('.aws-popup-backdrop');
     
+    console.log('AWS elements found:', { awsSkill, awsPopup, awsBackdrop });
+    
     if (awsSkill && awsPopup) {
+        let hoverTimeout;
+        
         // Show popup on hover
-        awsSkill.addEventListener('mouseenter', function() {
+        awsSkill.addEventListener('mouseenter', function(e) {
+            console.log('Mouse enter AWS skill');
+            clearTimeout(hoverTimeout);
             awsPopup.classList.add('show');
         });
         
-        awsSkill.addEventListener('mouseleave', function() {
+        awsSkill.addEventListener('mouseleave', function(e) {
+            console.log('Mouse leave AWS skill');
+            hoverTimeout = setTimeout(() => {
+                awsPopup.classList.remove('show');
+            }, 100);
+        });
+        
+        // Keep popup open when hovering over it
+        awsPopup.addEventListener('mouseenter', function(e) {
+            console.log('Mouse enter popup');
+            clearTimeout(hoverTimeout);
+        });
+        
+        awsPopup.addEventListener('mouseleave', function(e) {
+            console.log('Mouse leave popup');
             awsPopup.classList.remove('show');
         });
         
         // Show popup on click (for mobile)
         awsSkill.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            console.log('AWS skill clicked');
             awsPopup.classList.toggle('show');
         });
         
         // Close popup when clicking backdrop
         if (awsBackdrop) {
-            awsBackdrop.addEventListener('click', function() {
+            awsBackdrop.addEventListener('click', function(e) {
+                console.log('Backdrop clicked');
                 awsPopup.classList.remove('show');
             });
         }
@@ -31,9 +54,20 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close popup on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
+                console.log('Escape pressed');
                 awsPopup.classList.remove('show');
             }
         });
+        
+        // Prevent popup from closing when clicking on content
+        const awsContent = document.querySelector('.aws-popup-content');
+        if (awsContent) {
+            awsContent.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    } else {
+        console.error('AWS elements not found!');
     }
 });
 

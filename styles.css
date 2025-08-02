@@ -624,7 +624,7 @@ body {
     justify-content: center !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    transition: all 0.3s ease !important;
+    transition: opacity 0.2s ease, visibility 0.2s ease !important;
     z-index: 999999 !important;
     pointer-events: none !important;
 }
