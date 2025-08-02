@@ -689,6 +689,88 @@ body {
     transform: scale(1.05);
 }
 
+/* Models Skill Popup */
+.models-skill {
+    position: relative !important;
+    cursor: pointer !important;
+    overflow: visible !important;
+}
+
+.models-popup {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.2s ease, visibility 0.2s ease !important;
+    z-index: 999999 !important;
+    pointer-events: none !important;
+}
+
+.models-popup.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
+}
+
+.models-popup-backdrop {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
+}
+
+.models-popup-content {
+    position: relative !important;
+    z-index: 999999 !important;
+    background: var(--card-bg) !important;
+    border: 2px solid var(--accent-primary) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 25px 80px var(--shadow-heavy) !important;
+    width: 280px !important;
+    max-width: 90vw !important;
+}
+
+.models-popup-content h4 {
+    color: var(--accent-primary);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.models-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.models-list span {
+    background: var(--skill-bg);
+    color: var(--text-tertiary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    border: 1px solid var(--skill-border);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.models-list span:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: scale(1.05);
+}
+
 .barclays-logo {
     height: 75px !important;
     max-width: 255px !important;

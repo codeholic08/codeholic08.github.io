@@ -69,6 +69,76 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.error('AWS elements not found!');
     }
+    
+    // Models skill popup
+    const modelsSkill = document.querySelector('.models-skill');
+    const modelsPopup = document.getElementById('models-popup');
+    const modelsBackdrop = document.querySelector('.models-popup-backdrop');
+    
+    console.log('Models elements found:', { modelsSkill, modelsPopup, modelsBackdrop });
+    
+    if (modelsSkill && modelsPopup) {
+        let modelsHoverTimeout;
+        
+        // Show popup on hover
+        modelsSkill.addEventListener('mouseenter', function(e) {
+            console.log('Mouse enter Models skill');
+            clearTimeout(modelsHoverTimeout);
+            modelsPopup.classList.add('show');
+        });
+        
+        modelsSkill.addEventListener('mouseleave', function(e) {
+            console.log('Mouse leave Models skill');
+            modelsHoverTimeout = setTimeout(() => {
+                modelsPopup.classList.remove('show');
+            }, 100);
+        });
+        
+        // Keep popup open when hovering over it
+        modelsPopup.addEventListener('mouseenter', function(e) {
+            console.log('Mouse enter Models popup');
+            clearTimeout(modelsHoverTimeout);
+        });
+        
+        modelsPopup.addEventListener('mouseleave', function(e) {
+            console.log('Mouse leave Models popup');
+            modelsPopup.classList.remove('show');
+        });
+        
+        // Show popup on click (for mobile)
+        modelsSkill.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Models skill clicked');
+            modelsPopup.classList.toggle('show');
+        });
+        
+        // Close popup when clicking backdrop
+        if (modelsBackdrop) {
+            modelsBackdrop.addEventListener('click', function(e) {
+                console.log('Models backdrop clicked');
+                modelsPopup.classList.remove('show');
+            });
+        }
+        
+        // Close popup on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                console.log('Escape pressed');
+                modelsPopup.classList.remove('show');
+            }
+        });
+        
+        // Prevent popup from closing when clicking on content
+        const modelsContent = document.querySelector('.models-popup-content');
+        if (modelsContent) {
+            modelsContent.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    } else {
+        console.error('Models elements not found!');
+    }
 });
 
 // Theme Toggle Functionality
