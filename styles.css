@@ -615,27 +615,49 @@ body {
 
 .aws-popup {
     position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    background: var(--card-bg) !important;
-    border: 2px solid var(--accent-primary) !important;
-    border-radius: 12px !important;
-    padding: 1rem !important;
-    box-shadow: 0 20px 60px var(--shadow-heavy) !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     opacity: 0 !important;
     visibility: hidden !important;
     transition: all 0.3s ease !important;
-    z-index: 99999 !important;
-    width: 320px !important;
+    z-index: 999999 !important;
+    pointer-events: none !important;
+}
+
+.aws-popup.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: all !important;
+}
+
+.aws-popup-backdrop {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.5) !important;
     backdrop-filter: blur(5px) !important;
 }
 
-.aws-skill:hover .aws-popup {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translate(-50%, -50%) !important;
+.aws-popup-content {
+    position: relative !important;
+    z-index: 999999 !important;
+    background: var(--card-bg) !important;
+    border: 2px solid var(--accent-primary) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 25px 80px var(--shadow-heavy) !important;
+    width: 320px !important;
+    max-width: 90vw !important;
 }
+
+/* Remove old hover styles - will be handled by JavaScript */
 
 .aws-popup-content h4 {
     color: var(--accent-primary);

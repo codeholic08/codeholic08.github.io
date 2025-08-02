@@ -2,33 +2,36 @@
 document.addEventListener('DOMContentLoaded', function() {
     // AWS skill popup
     const awsSkill = document.querySelector('.aws-skill');
-    const awsPopup = document.querySelector('.aws-popup');
+    const awsPopup = document.getElementById('aws-popup');
+    const awsBackdrop = document.querySelector('.aws-popup-backdrop');
     
     if (awsSkill && awsPopup) {
-        // Show popup on hover and click
+        // Show popup on hover
         awsSkill.addEventListener('mouseenter', function() {
-            awsPopup.style.opacity = '1';
-            awsPopup.style.visibility = 'visible';
-            awsPopup.style.transform = 'translate(-50%, -50%)';
+            awsPopup.classList.add('show');
         });
         
         awsSkill.addEventListener('mouseleave', function() {
-            awsPopup.style.opacity = '0';
-            awsPopup.style.visibility = 'hidden';
-            awsPopup.style.transform = 'translate(-50%, -50%)';
+            awsPopup.classList.remove('show');
         });
         
+        // Show popup on click (for mobile)
         awsSkill.addEventListener('click', function(e) {
             e.preventDefault();
-            // Toggle popup on click
-            if (awsPopup.style.opacity === '1') {
-                awsPopup.style.opacity = '0';
-                awsPopup.style.visibility = 'hidden';
-                awsPopup.style.transform = 'translate(-50%, -50%)';
-            } else {
-                awsPopup.style.opacity = '1';
-                awsPopup.style.visibility = 'visible';
-                awsPopup.style.transform = 'translate(-50%, -50%)';
+            awsPopup.classList.toggle('show');
+        });
+        
+        // Close popup when clicking backdrop
+        if (awsBackdrop) {
+            awsBackdrop.addEventListener('click', function() {
+                awsPopup.classList.remove('show');
+            });
+        }
+        
+        // Close popup on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                awsPopup.classList.remove('show');
             }
         });
     }
