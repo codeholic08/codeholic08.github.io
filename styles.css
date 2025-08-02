@@ -266,6 +266,8 @@ body {
 
 .profile-image {
     text-align: center;
+    position: relative;
+    display: inline-block;
 }
 
 .profile-image img {
@@ -281,10 +283,12 @@ body {
 }
 
 .profile-image img:hover {
-    transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 40px 80px var(--shadow-heavy);
-    filter: brightness(1.1) contrast(1.05);
-    border-color: var(--accent-primary);
+    transform: scale(1.2) rotate(8deg) !important;
+    box-shadow: 0 50px 100px var(--shadow-heavy) !important;
+    filter: brightness(1.15) contrast(1.1) !important;
+    border-color: var(--accent-primary) !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
 }
 
 @keyframes fadeInScale {
