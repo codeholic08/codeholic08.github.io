@@ -1,3 +1,39 @@
+// AWS Popup Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // AWS skill popup
+    const awsSkill = document.querySelector('.aws-skill');
+    const awsPopup = document.querySelector('.aws-popup');
+    
+    if (awsSkill && awsPopup) {
+        // Show popup on hover and click
+        awsSkill.addEventListener('mouseenter', function() {
+            awsPopup.style.opacity = '1';
+            awsPopup.style.visibility = 'visible';
+            awsPopup.style.transform = 'translateX(-50%) translateY(0)';
+        });
+        
+        awsSkill.addEventListener('mouseleave', function() {
+            awsPopup.style.opacity = '0';
+            awsPopup.style.visibility = 'hidden';
+            awsPopup.style.transform = 'translateX(-50%) translateY(10px)';
+        });
+        
+        awsSkill.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Toggle popup on click
+            if (awsPopup.style.opacity === '1') {
+                awsPopup.style.opacity = '0';
+                awsPopup.style.visibility = 'hidden';
+                awsPopup.style.transform = 'translateX(-50%) translateY(10px)';
+            } else {
+                awsPopup.style.opacity = '1';
+                awsPopup.style.visibility = 'visible';
+                awsPopup.style.transform = 'translateX(-50%) translateY(0)';
+            }
+        });
+    }
+});
+
 // Theme Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');

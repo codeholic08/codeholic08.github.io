@@ -606,32 +606,33 @@ body {
 
 /* AWS Skill Popup */
 .aws-skill {
-    position: relative;
-    cursor: pointer;
+    position: relative !important;
+    cursor: pointer !important;
+    overflow: visible !important;
 }
 
 .aws-popup {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--card-bg);
-    border: 2px solid var(--accent-primary);
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 10px 30px var(--shadow-heavy);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    width: 300px;
-    margin-top: 10px;
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) !important;
+    background: var(--card-bg) !important;
+    border: 2px solid var(--accent-primary) !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+    box-shadow: 0 10px 30px var(--shadow-heavy) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    z-index: 1000 !important;
+    width: 300px !important;
+    margin-top: 10px !important;
 }
 
 .aws-skill:hover .aws-popup {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) !important;
 }
 
 .aws-popup-content h4 {
