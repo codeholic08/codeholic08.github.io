@@ -202,11 +202,12 @@ body {
 }
 
 .main-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
     line-height: 1.2;
+    white-space: nowrap;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1056,7 +1057,8 @@ body {
     }
 
     .main-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        white-space: nowrap;
     }
 
     .subtitle {
@@ -1108,7 +1110,8 @@ body {
     }
 
     .main-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        white-space: nowrap;
     }
 
     .section-title {
