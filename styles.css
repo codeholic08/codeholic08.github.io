@@ -563,6 +563,11 @@ body {
     filter: grayscale(0);
 }
 
+.barclays-logo {
+    height: 50px !important;
+    max-width: 170px !important;
+}
+
 
 
 .job-title,
