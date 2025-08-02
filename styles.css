@@ -279,8 +279,8 @@ body {
 }
 
 .profile-image img {
-    width: 570px;
-    height: 570px;
+    width: 741px;
+    height: 741px;
     border-radius: 50%;
     object-fit: cover;
     border: 8px solid var(--card-bg);
@@ -797,8 +797,8 @@ body {
     }
 
     .profile-image img {
-        width: 280px;
-        height: 280px;
+        width: 320px;
+        height: 320px;
     }
 
     .main-title {
