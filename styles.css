@@ -279,8 +279,8 @@ body {
 }
 
 .profile-image img {
-    width: 380px;
-    height: 380px;
+    width: 570px;
+    height: 570px;
     border-radius: 50%;
     object-fit: cover;
     border: 8px solid var(--card-bg);
@@ -794,6 +794,11 @@ body {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 2rem;
+    }
+
+    .profile-image img {
+        width: 280px;
+        height: 280px;
     }
 
     .main-title {
