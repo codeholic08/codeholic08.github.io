@@ -887,6 +887,41 @@ body {
     mix-blend-mode: difference;
 }
 
+/* Gradient Cursor Effect */
+.cursor-gradient {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle 300px at center,
+        rgba(56, 189, 248, 0.15) 0%,
+        rgba(56, 189, 248, 0.08) 25%,
+        rgba(56, 189, 248, 0.04) 50%,
+        transparent 70%
+    );
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    mix-blend-mode: normal;
+}
+
+[data-theme="dark"] .cursor-gradient {
+    background: radial-gradient(
+        circle 300px at center,
+        rgba(56, 189, 248, 0.25) 0%,
+        rgba(56, 189, 248, 0.12) 25%,
+        rgba(56, 189, 248, 0.06) 50%,
+        transparent 70%
+    );
+}
+
+body:hover .cursor-gradient {
+    opacity: 1;
+}
+
 .cursor-follower.cursor-grow {
     transform: scale(2);
     opacity: 0.7;
