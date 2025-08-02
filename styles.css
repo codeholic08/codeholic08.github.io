@@ -279,8 +279,8 @@ body {
 }
 
 .profile-image img {
-    width: 280px;
-    height: 280px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     object-fit: cover;
     border: 8px solid var(--card-bg);
@@ -876,18 +876,7 @@ body {
     transform: translateY(0);
 }
 
-/* Loading animation for profile image */
-.profile-image img {
-    opacity: 0;
-    animation: fadeInImage 1s ease forwards;
-    animation-delay: 0.5s;
-}
 
-@keyframes fadeInImage {
-    to {
-        opacity: 1;
-    }
-}
 
 /* Cursor Follower Effect */
 .cursor-follower {
