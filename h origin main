@@ -1,0 +1,5 @@
+[33m2b8c210[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Fixed logo alignment by adding qualcomm-logo class with consistent styling
+[33m6329202[m Further reduced bottom margin for company logos for tighter spacing
+[33ma78d802[m Reduced bottom margin for both company logos to match education section spacing
+[33m954b811[m Fixed Barclays logo top spacing to match Qualcomm - added negative top margin
+[33med13891[m Fixed Barclays logo spacing - reduced margin to match Qualcomm logo spacing
