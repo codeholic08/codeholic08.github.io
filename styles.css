@@ -563,6 +563,13 @@ body {
     filter: grayscale(0);
 }
 
+.qualcomm-logo {
+    height: 75px !important;
+    max-width: 255px !important;
+    margin-top: -8px !important;
+    margin-bottom: -16px !important;
+}
+
 .barclays-logo {
     height: 75px !important;
     max-width: 255px !important;
