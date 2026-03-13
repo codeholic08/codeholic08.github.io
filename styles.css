@@ -257,7 +257,7 @@ body {
     line-height: 1.7;
     color: var(--text-tertiary);
     transition: color 0.3s ease;
-    text-align: left;
+    text-align: justify;
 }
 
 @keyframes titleGlow {
@@ -283,8 +283,8 @@ body {
 }
 
 .profile-image img {
-    width: 400px;
-    height: 500px;
+    width: 480px;
+    height: 600px;
     border-radius: 20px;
     object-fit: cover;
     border: 8px solid var(--card-bg);
