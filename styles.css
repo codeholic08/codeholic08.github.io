@@ -283,9 +283,9 @@ body {
 }
 
 .profile-image img {
-    width: 520px;
-    height: 520px;
-    border-radius: 16px;
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
     object-fit: cover;
     border: 8px solid var(--card-bg);
     box-shadow: 0 20px 40px var(--shadow-medium);
@@ -1045,8 +1045,8 @@ body {
     }
 
     .profile-image img {
-        width: 280px;
-        height: 280px;
+        width: 260px;
+        height: 325px;
     }
 
     .title-header {
