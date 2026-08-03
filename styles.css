@@ -182,9 +182,9 @@ button { font: inherit; }
 .education-grid strong { display: block; margin-top: 11px; font-size: 18px; }
 .education-grid p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
 .toolkit { display: grid; grid-template-columns: .3fr 1.7fr; gap: 30px; margin-top: 105px; padding-top: 30px; border-top: 1px solid var(--ink); }
-.toolkit-title { font-family: var(--mono); font-size: 12px; letter-spacing: .07em; }
+.toolkit-title { font-family: var(--mono); font-size: 14px; letter-spacing: .06em; }
 .toolkit > div { display: flex; flex-wrap: wrap; gap: 10px; }
-.toolkit > div span { padding: 10px 14px; border: 1px solid var(--line); background: var(--paper-bright); font-family: var(--mono); font-size: 12px; }
+.toolkit > div span { padding: 12px 17px; border: 1px solid var(--line); background: var(--paper-bright); font-family: var(--mono); font-size: 14px; }
 
 .contact-section { padding: 120px 0 35px; color: var(--ink); background: var(--lime); border-top: 1px solid var(--ink); }
 .contact-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 80px; align-items: end; }
