@@ -17,7 +17,7 @@ Open `index.html` directly in a browser, or serve the directory with any static 
 
 ## Publish
 
-The repository is configured for the user site at [codeholic08.github.io](https://codeholic08.github.io/). Pushing the files to the `main` branch will update the GitHub Pages deployment when Pages is enabled for the repository root.
+The repository is configured for the custom domain [maazrashid.com](https://maazrashid.com/), hosted through GitHub Pages. Pushing files to the `main` branch updates the live site.
 
 ## Editing content
 

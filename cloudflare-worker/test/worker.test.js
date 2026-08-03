@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import worker from '../src/index.js';
 
-const allowedOrigin = 'https://codeholic08.github.io';
+const allowedOrigin = 'https://maazrashid.com';
 
 function request(question, origin = allowedOrigin) {
   return new Request('https://worker.example/api/chat', {
@@ -93,7 +93,7 @@ test('returns the resume PDF directly without calling Gemini', async () => {
     assert.equal(response.status, 200);
     assert.equal(body.links.length, 1);
     assert.equal(body.links[0].label, 'Open resume PDF');
-    assert.equal(body.links[0].url, 'https://codeholic08.github.io/Resume.pdf');
+    assert.equal(body.links[0].url, 'https://maazrashid.com/Resume.pdf');
     assert.equal(called, false);
   } finally {
     globalThis.fetch = originalFetch;

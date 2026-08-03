@@ -49,15 +49,15 @@ Technical toolkit:
 
 Contact and profiles:
 - Email: mr7374@nyu.edu
-- Resume PDF: https://codeholic08.github.io/Resume.pdf
+- Resume PDF: https://maazrashid.com/Resume.pdf
 - LinkedIn: https://www.linkedin.com/in/rashid-maaz/
 - GitHub: https://github.com/codeholic08
 - Instagram: https://www.instagram.com/itsmaazr/
-- Portfolio: https://codeholic08.github.io/
+- Portfolio: https://maazrashid.com/
 `;
 
 const PROFILE_LINKS = Object.freeze({
-  resume: { label: 'Open resume PDF', url: 'https://codeholic08.github.io/Resume.pdf' },
+  resume: { label: 'Open resume PDF', url: 'https://maazrashid.com/Resume.pdf' },
   linkedin: { label: 'Open LinkedIn', url: 'https://www.linkedin.com/in/rashid-maaz/' },
   github: { label: 'Open GitHub', url: 'https://github.com/codeholic08' },
   instagram: { label: 'Open Instagram', url: 'https://www.instagram.com/itsmaazr/' },
@@ -160,9 +160,10 @@ function removeEmDashes(answer) {
 export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin') || '';
-    const allowedOrigin = env.ALLOWED_ORIGIN || 'https://codeholic08.github.io';
+    const allowedOrigin = env.ALLOWED_ORIGIN || 'https://maazrashid.com';
+    const legacyOrigin = 'https://codeholic08.github.io';
     const localOrigin = /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
-    const acceptedOrigin = origin === allowedOrigin || localOrigin;
+    const acceptedOrigin = origin === allowedOrigin || origin === legacyOrigin || localOrigin;
 
     if (!acceptedOrigin) {
       return jsonResponse({ error: 'Origin not allowed.' }, 403, allowedOrigin);

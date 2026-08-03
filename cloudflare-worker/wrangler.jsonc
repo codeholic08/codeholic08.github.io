@@ -8,7 +8,7 @@
     "enabled": true
   },
   "vars": {
-    "ALLOWED_ORIGIN": "https://codeholic08.github.io",
+    "ALLOWED_ORIGIN": "https://maazrashid.com",
     "GEMINI_MODEL": "gemini-3.5-flash-lite"
   },
   "ratelimits": [
