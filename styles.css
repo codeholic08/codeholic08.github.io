@@ -68,7 +68,7 @@ button { font: inherit; }
 .status-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #49a94e; }
 .status-dot::after { content: ""; position: absolute; inset: -4px; border: 1px solid #49a94e; border-radius: inherit; opacity: .35; animation: pulse 2s infinite; }
 @keyframes pulse { 50% { transform: scale(1.35); opacity: 0; } }
-.hero-grid { min-height: 680px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(360px, .75fr); align-items: center; gap: clamp(50px, 8vw, 120px); padding: 35px 0 70px; }
+.hero-grid { min-height: 720px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(410px, .85fr); align-items: center; gap: clamp(45px, 6vw, 90px); padding: 35px 0 70px; }
 .eyebrow { margin: 0; font-family: var(--mono); font-size: 14px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 .hero-copy h1 { max-width: 870px; margin: 22px 0 26px; font-size: clamp(54px, 6.4vw, 98px); line-height: .97; letter-spacing: -.067em; font-weight: 600; }
 .hero-copy h1 em, .contact-section h2 em { position: relative; font-weight: 400; font-style: italic; }
@@ -84,8 +84,8 @@ button { font: inherit; }
 .text-link { font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--ink); }
 .text-link span { margin-left: 6px; }
 
-.hero-visual { position: relative; display: grid; place-items: center; min-height: 550px; }
-.portrait-frame { position: relative; z-index: 3; width: min(390px, 88%); aspect-ratio: 4 / 5; padding: 12px; background: var(--paper-bright); border: 1px solid var(--ink); transform: rotate(2.5deg); box-shadow: 12px 14px 0 var(--ink); }
+.hero-visual { position: relative; display: grid; place-items: center; min-height: 620px; }
+.portrait-frame { position: relative; z-index: 3; width: min(440px, 94%); aspect-ratio: 4 / 5; padding: 12px; background: var(--paper-bright); border: 1px solid var(--ink); transform: rotate(2.5deg); box-shadow: 12px 14px 0 var(--ink); }
 .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; filter: saturate(.78) contrast(1.04); }
 .portrait-label { position: absolute; right: -32px; bottom: 32px; width: 92px; height: 92px; display: grid; place-content: center; text-align: center; border-radius: 50%; background: var(--lime); border: 1px solid var(--ink); color: var(--ink); transform: rotate(-8deg); }
 .portrait-label span { font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: .08em; }
@@ -97,6 +97,8 @@ button { font: inherit; }
 .visual-note span { color: #767b76; margin-right: 8px; }
 .note-one { left: -15px; top: 28%; transform: rotate(-4deg); }
 .note-two { right: -8px; top: 18%; transform: rotate(3deg); }
+.note-three { left: -24px; bottom: 20%; transform: rotate(3deg); }
+.note-four { right: -18px; bottom: 37%; transform: rotate(-3deg); }
 
 .proof-strip { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--ink); border-bottom: 0; }
 .proof-strip > div { min-height: 145px; padding: 27px; display: flex; align-items: flex-end; gap: 14px; border-right: 1px solid var(--ink); }
@@ -204,7 +206,7 @@ button { font: inherit; }
 @media (max-width: 1000px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { min-height: 520px; }
-  .portrait-frame { width: 360px; }
+  .portrait-frame { width: 390px; }
   .note-one { left: 12%; }
   .note-two { right: 12%; }
   .project-body { grid-template-columns: 1fr; }
@@ -241,6 +243,8 @@ button { font: inherit; }
   .orbit-two { width: 260px; height: 380px; }
   .note-one { left: 0; top: 26%; }
   .note-two { right: 0; }
+  .note-three { left: 0; bottom: 12%; }
+  .note-four { right: 0; bottom: 34%; }
   .proof-strip { grid-template-columns: 1fr 1fr; }
   .proof-strip > div { min-height: 125px; padding: 20px; }
   .proof-strip > div:nth-child(2) { border-right: 0; }
