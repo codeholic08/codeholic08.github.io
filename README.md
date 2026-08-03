@@ -1,15 +1,15 @@
-# Mohammad Maaz Rashid — Portfolio
+# Mohammad Maaz Rashid: Portfolio
 
 Personal portfolio for Mohammad Maaz Rashid, a software and machine learning engineer focused on AI infrastructure, vector search, backend systems, and production data platforms.
 
 ## Site structure
 
-- `index.html` — semantic page content and metadata
-- `styles.css` — responsive editorial design system
-- `script.js` — mobile navigation, smooth navigation, and reveal effects
-- `Photo.jpeg` — profile portrait
-- `Resume.pdf` — downloadable résumé
-- `og.png` — social sharing card
+- `index.html` contains the semantic page content and metadata.
+- `styles.css` contains the responsive editorial design system.
+- `script.js` handles mobile navigation, smooth navigation, and reveal effects.
+- `Photo.jpeg` is the profile portrait.
+- `Resume.pdf` is the downloadable résumé.
+- `og.png` is the social sharing card.
 
 ## Preview locally
 

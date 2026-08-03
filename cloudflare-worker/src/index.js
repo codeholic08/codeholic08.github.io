@@ -80,6 +80,7 @@ Rules you must always follow:
 10. If the user explicitly asks for a technical or detailed answer, provide more depth while still defining specialized terms.
 11. Speak about Maaz in the third person. Do not claim to be Maaz.
 12. Only include links that appear verbatim in the verified context.
+13. Do not use em dashes. Connect ideas with complete sentences, commas, or words such as "and" or "while."
 
 Style example for "What is Maaz working on?":
 "Maaz is researching how to keep AI search systems fast and accurate while new information is constantly being added. This work could help applications find useful results quickly even when their data changes throughout the day. He is doing this research at NYU."
@@ -150,6 +151,10 @@ function limitAnswer(answer, maxWords = 120) {
   const words = answer.split(/\s+/).filter(Boolean);
   if (words.length <= maxWords) return answer;
   return `${words.slice(0, maxWords).join(' ')}...`;
+}
+
+function removeEmDashes(answer) {
+  return answer.replace(/\s*\u2014\s*/g, ', ');
 }
 
 export default {
@@ -248,6 +253,6 @@ export default {
       return jsonResponse({ error: 'The assistant could not produce an answer.' }, 502, origin);
     }
 
-    return jsonResponse({ answer: limitAnswer(answer) }, 200, origin);
+    return jsonResponse({ answer: removeEmDashes(limitAnswer(answer)) }, 200, origin);
   },
 };

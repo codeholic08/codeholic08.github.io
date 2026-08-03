@@ -60,11 +60,12 @@ test('returns a concise Gemini answer for an in-scope question', async () => {
     assert.match(requestBody.systemInstruction.parts[0].text, /6,000\+ students/);
     assert.match(requestBody.systemInstruction.parts[0].text, /Write for a non-technical reader by default/);
     assert.match(requestBody.systemInstruction.parts[0].text, /Avoid acronyms, product names, architecture details/);
+    assert.match(requestBody.systemInstruction.parts[0].text, /Do not use em dashes/);
     assert.match(requestBody.contents[0].parts[0].text, /PLAIN-LANGUAGE MODE \(mandatory\)/);
     assert.match(requestBody.contents[0].parts[0].text, /no bullet list/);
     assert.doesNotMatch(requestBody.systemInstruction.parts[0].text, /929.*726.*4505/);
     return new Response(JSON.stringify({
-      candidates: [{ content: { parts: [{ text: 'Maaz works on vector search at NYU.' }] } }],
+      candidates: [{ content: { parts: [{ text: 'Maaz works on vector search\u2014work that improves relevance at NYU.' }] } }],
     }), { status: 200, headers: { 'Content-Type': 'application/json' } });
   };
 
@@ -72,7 +73,7 @@ test('returns a concise Gemini answer for an in-scope question', async () => {
     const response = await worker.fetch(request('What is Maaz working on?'), environment());
     const body = await response.json();
     assert.equal(response.status, 200);
-    assert.equal(body.answer, 'Maaz works on vector search at NYU.');
+    assert.equal(body.answer, 'Maaz works on vector search, work that improves relevance at NYU.');
   } finally {
     globalThis.fetch = originalFetch;
   }
