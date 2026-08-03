@@ -53,12 +53,12 @@ button { font: inherit; }
 .wordmark-name { color: #1687a2; }
 .wordmark-dot { margin-left: 2px; color: var(--ink); }
 .wordmark-underscore { margin-left: -7px; color: #7857d7; }
-.desktop-nav { display: flex; align-items: center; gap: 44px; font-family: var(--nav-mono); font-size: 20px; font-weight: 700; letter-spacing: -.035em; }
+.desktop-nav { display: flex; align-items: center; gap: 44px; font-family: var(--nav-mono); font-size: 22px; font-weight: 700; letter-spacing: -.035em; }
 .desktop-nav a, .header-cta { position: relative; }
 .desktop-nav a::before, .header-cta::before, .mobile-nav a::before { content: "//"; margin-right: 9px; font-weight: 400; }
 .desktop-nav a::after, .header-cta::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -6px; height: 1px; background: currentColor; transition: right .25s ease; }
 .desktop-nav a:hover::after, .desktop-nav a:focus-visible::after, .header-cta:hover::after, .header-cta:focus-visible::after { right: 0; }
-.header-cta { justify-self: end; font-family: var(--nav-mono); font-size: 20px; font-weight: 700; letter-spacing: -.035em; }
+.header-cta { justify-self: end; font-family: var(--nav-mono); font-size: 22px; font-weight: 700; letter-spacing: -.035em; }
 .menu-button, .mobile-nav { display: none; }
 
 .hero { padding-top: 54px; }
@@ -107,7 +107,7 @@ button { font: inherit; }
 .proof-strip span { padding-bottom: 2px; color: var(--muted); font-family: var(--mono); font-size: 12px; line-height: 1.45; text-transform: uppercase; }
 
 @media (min-width: 761px) {
-  .wordmark { font-size: 30px; }
+  .wordmark { font-size: 33px; }
   .proof-strip > div { align-items: center; justify-content: center; text-align: center; }
 }
 
