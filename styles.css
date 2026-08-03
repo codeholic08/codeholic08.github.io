@@ -130,7 +130,7 @@ button { font: inherit; }
 .project-kicker { margin: 20px 0 12px; font-size: 20px; font-weight: 600; }
 .project-copy > p:not(.project-kicker) { max-width: 590px; color: #aeb4af; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 7px; padding: 0; margin: 22px 0; list-style: none; }
-.tag-list li { padding: 7px 11px; border: 1px solid currentColor; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+.tag-list li { padding: 9px 14px; border: 1px solid currentColor; font-family: var(--mono); font-size: 14px; text-transform: uppercase; letter-spacing: .045em; }
 .project-link { margin-top: auto; font-size: 13px; font-weight: 700; border-bottom: 1px solid currentColor; }
 .project-link span { margin-left: 6px; }
 .shader-demo { position: relative; overflow: hidden; display: grid; place-items: center; min-height: 500px; background: radial-gradient(circle at 70% 30%, #bbe535 0, transparent 26%), radial-gradient(circle at 20% 80%, #5929b8 0, transparent 35%), linear-gradient(135deg, #1a2b24, #0d0f0e 70%); border-left: 1px solid var(--line-light); }
@@ -168,7 +168,7 @@ button { font: inherit; }
 .experience-detail > p { margin: 0; color: #c1c7c2; font-size: 17px; line-height: 1.7; }
 .experience-detail strong { color: var(--lime); }
 .experience-detail .tag-list { margin-bottom: 0; color: #aeb4af; }
-.experience-detail .tag-list li { padding: 8px 12px; font-size: 13px; }
+.experience-detail .tag-list li { padding: 9px 14px; font-size: 14px; }
 
 .about-section { padding-block: 140px; }
 .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(60px, 10vw, 150px); }
