@@ -1,0 +1,73 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import worker from '../src/index.js';
+
+const allowedOrigin = 'https://codeholic08.github.io';
+
+function request(question, origin = allowedOrigin) {
+  return new Request('https://worker.example/api/chat', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Origin: origin,
+    },
+    body: JSON.stringify({ question }),
+  });
+}
+
+function environment(success = true) {
+  return {
+    ALLOWED_ORIGIN: allowedOrigin,
+    GEMINI_API_KEY: 'test-key',
+    GEMINI_MODEL: 'gemini-3.5-flash',
+    CHAT_RATE_LIMITER: {
+      limit: async () => ({ success }),
+    },
+  };
+}
+
+test('blocks requests from other origins', async () => {
+  const response = await worker.fetch(request('What are his skills?', 'https://example.com'), environment());
+  assert.equal(response.status, 403);
+});
+
+test('refuses an unrelated question without calling Gemini', async () => {
+  const originalFetch = globalThis.fetch;
+  let called = false;
+  globalThis.fetch = async () => {
+    called = true;
+    throw new Error('Gemini should not be called');
+  };
+
+  try {
+    const response = await worker.fetch(request('What is the capital of France?'), environment());
+    const body = await response.json();
+    assert.equal(response.status, 200);
+    assert.match(body.answer, /only answer questions about Maaz/i);
+    assert.equal(called, false);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('returns a concise Gemini answer for an in-scope question', async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({
+    candidates: [{ content: { parts: [{ text: 'Maaz works on vector search at NYU.' }] } }],
+  }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+
+  try {
+    const response = await worker.fetch(request('What is Maaz working on?'), environment());
+    const body = await response.json();
+    assert.equal(response.status, 200);
+    assert.equal(body.answer, 'Maaz works on vector search at NYU.');
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('enforces the server rate limit', async () => {
+  const response = await worker.fetch(request('What are Maaz skills?'), environment(false));
+  assert.equal(response.status, 429);
+  assert.equal(response.headers.get('Retry-After'), '60');
+});

@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260803-web11">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260803-chat1">
+  <script src="script.js?v=20260803-chat1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -273,5 +273,42 @@
       </div>
     </section>
   </main>
+
+  <div class="portfolio-chat" data-portfolio-chat data-api-url="" hidden>
+    <button class="chat-launcher" type="button" aria-expanded="false" aria-controls="portfolio-chat-panel">
+      <span class="chat-launcher-dot" aria-hidden="true"></span>
+      <span>ASK MMR</span>
+      <span class="chat-launcher-symbol" aria-hidden="true">+</span>
+    </button>
+
+    <section class="chat-panel" id="portfolio-chat-panel" aria-label="Ask about Mohammad Maaz Rashid" hidden>
+      <header class="chat-header">
+        <div>
+          <p>MMR // AI</p>
+          <span>PORTFOLIO ASSISTANT</span>
+        </div>
+        <button class="chat-close" type="button" aria-label="Close chat">&times;</button>
+      </header>
+
+      <div class="chat-messages" role="log" aria-live="polite" aria-relevant="additions">
+        <div class="chat-message chat-message-assistant">
+          <span>MMR</span>
+          <p>Ask me about Maaz's work, experience, education, projects, or technical skills.</p>
+        </div>
+        <div class="chat-suggestions" aria-label="Suggested questions">
+          <button type="button">What is Maaz working on?</button>
+          <button type="button">Summarize his experience</button>
+          <button type="button">What are his strongest skills?</button>
+        </div>
+      </div>
+
+      <form class="chat-form">
+        <label class="sr-only" for="portfolio-chat-input">Ask a question about Maaz</label>
+        <textarea id="portfolio-chat-input" name="question" rows="1" maxlength="350" placeholder="Ask about Maaz..." required></textarea>
+        <button class="chat-send" type="submit" aria-label="Send question">&uarr;</button>
+        <div class="chat-usage"><span data-chat-status>10 questions this session</span><span><span data-chat-length>0</span>/350</span></div>
+      </form>
+    </section>
+  </div>
 </body>
 </html>
