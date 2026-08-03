@@ -247,7 +247,8 @@ button { font: inherit; }
   .note-three { left: 0; bottom: 12%; }
   .note-four { right: 0; bottom: 34%; }
   .proof-strip { grid-template-columns: 1fr 1fr; }
-  .proof-strip > div { min-height: 125px; padding: 20px; }
+  .proof-strip > div { min-height: 165px; padding: 20px 16px; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; }
+  .proof-strip span { max-width: 100%; padding-bottom: 0; font-size: 11px; overflow-wrap: anywhere; }
   .proof-strip > div:nth-child(2) { border-right: 0; }
   .proof-strip > div:nth-child(-n+2) { border-bottom: 1px solid var(--ink); }
   .proof-strip strong { font-size: 35px; }
@@ -284,7 +285,7 @@ button { font: inherit; }
 
 @media (max-width: 390px) {
   .hero-copy h1 { font-size: 44px; }
-  .proof-strip > div { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .proof-strip > div { align-items: center; gap: 10px; }
   .visual-note { font-size: 8px; }
   .footer-row { grid-template-columns: 1fr; }
   .footer-row > a { justify-self: start; }
