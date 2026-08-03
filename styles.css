@@ -63,7 +63,7 @@ button { font: inherit; }
 
 .hero { padding-top: 54px; }
 .hero-meta { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
-.hero-meta .eyebrow, .hero-status { font-family: var(--nav-mono); font-size: 14px; font-weight: 700; letter-spacing: .035em; text-transform: uppercase; }
+.hero-meta .eyebrow, .hero-status { font-family: var(--nav-mono); font-size: 17px; font-weight: 700; letter-spacing: .035em; text-transform: uppercase; }
 .hero-status { display: flex; align-items: center; gap: 11px; white-space: nowrap; }
 .status-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #49a94e; }
 .status-dot::after { content: ""; position: absolute; inset: -4px; border: 1px solid #49a94e; border-radius: inherit; opacity: .35; animation: pulse 2s infinite; }
