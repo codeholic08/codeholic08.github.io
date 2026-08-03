@@ -49,8 +49,10 @@ button { font: inherit; }
   background: rgba(241, 239, 232, .86);
   backdrop-filter: blur(18px);
 }
-.wordmark { justify-self: start; display: inline-flex; align-items: center; gap: 7px; font-weight: 800; letter-spacing: -.05em; font-size: 20px; }
-.wordmark i { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); border: 1px solid var(--ink); }
+.wordmark { justify-self: start; display: inline-flex; align-items: baseline; font-family: var(--nav-mono); font-size: 27px; font-weight: 700; line-height: 1; letter-spacing: -.09em; }
+.wordmark-name { color: #1687a2; }
+.wordmark-dot { color: var(--ink); }
+.wordmark-underscore { margin-left: 2px; color: #7857d7; }
 .desktop-nav { display: flex; align-items: center; gap: 42px; font-family: var(--nav-mono); font-size: 15px; font-weight: 700; letter-spacing: -.035em; }
 .desktop-nav a, .header-cta { position: relative; }
 .desktop-nav a::before, .header-cta::before, .mobile-nav a::before { content: "//"; margin-right: 9px; font-weight: 400; }
