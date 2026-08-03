@@ -151,7 +151,7 @@ button { font: inherit; }
 .experience-row { display: grid; grid-template-columns: .7fr 1.25fr 1.6fr; align-items: center; gap: 35px; padding: 52px 0; border-bottom: 1px solid var(--line-light); }
 .experience-date { color: #abb2ac; font-family: var(--mono); font-size: 15px; line-height: 1.4; letter-spacing: .06em; }
 .experience-role { display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: center; }
-.company-mark { width: 150px; height: 82px; padding: 0; display: grid; place-items: center; background: transparent; }
+.company-mark { width: 150px; height: 82px; padding: 0; display: grid; place-items: center; background: transparent; transform: translateX(-32px); }
 .company-mark img { width: 100%; max-height: 82px; object-fit: contain; object-position: left center; }
 .experience-role h3 { margin: 0 0 5px; font-size: 22px; line-height: 1.25; }
 .experience-role p { margin: 0; color: #9da49e; font-size: 14px; }
@@ -260,7 +260,7 @@ button { font: inherit; }
   .project-card h3 { font-size: 52px; }
   .experience-row { grid-template-columns: 1fr; padding-block: 35px; }
   .experience-role { grid-template-columns: 120px 1fr; gap: 20px; }
-  .company-mark { width: 120px; height: 66px; }
+  .company-mark { width: 120px; height: 66px; transform: none; }
   .company-mark img { max-height: 66px; }
   .experience-detail { grid-column: 1; }
   .about-grid { grid-template-columns: 1fr; gap: 25px; }
