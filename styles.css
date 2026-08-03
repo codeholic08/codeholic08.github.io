@@ -74,7 +74,9 @@ button { font: inherit; }
 .hero-copy h1 em, .contact-section h2 em { position: relative; font-weight: 400; font-style: italic; }
 .hero-copy h1 em::after { content: ""; position: absolute; left: 1%; right: -2%; bottom: .02em; height: .12em; background: var(--lime); z-index: -1; transform: rotate(-1deg); }
 .hero-intro { max-width: 670px; margin: 0; color: #4d514d; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.65; }
-.hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 38px; }
+.hero-actions { display: flex; align-items: center; gap: 44px; margin-top: 38px; }
+.hero-actions .button, .hero-actions .text-link { font-size: 16px; }
+.hero-actions .button { min-height: 58px; padding-inline: 27px; }
 .button { min-height: 53px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: space-between; gap: 38px; border: 1px solid currentColor; font-size: 13px; font-weight: 700; transition: transform .2s, background .2s, color .2s; }
 .button:hover { transform: translateY(-3px); }
 .button-primary { background: var(--ink); color: white; }
@@ -231,7 +233,7 @@ button { font: inherit; }
   .hero-grid { min-height: auto; padding: 55px 0 60px; gap: 55px; }
   .hero-copy h1 { font-size: clamp(47px, 14vw, 68px); }
   .hero-intro { font-size: 16px; }
-  .hero-actions { align-items: flex-start; flex-direction: column; gap: 22px; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 26px; }
   .hero-visual { min-height: 440px; }
   .portrait-frame { width: min(300px, 82%); box-shadow: 8px 9px 0 var(--ink); }
   .portrait-label { right: -20px; width: 75px; height: 75px; }
