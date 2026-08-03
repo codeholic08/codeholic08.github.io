@@ -60,7 +60,9 @@ button { font: inherit; }
 .menu-button, .mobile-nav { display: none; }
 
 .hero { padding-top: 54px; }
-.hero-status { display: flex; justify-content: flex-end; align-items: center; gap: 9px; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.hero-meta { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
+.hero-meta .eyebrow, .hero-status { font-family: var(--nav-mono); font-size: 14px; font-weight: 700; letter-spacing: .035em; text-transform: uppercase; }
+.hero-status { display: flex; align-items: center; gap: 11px; white-space: nowrap; }
 .status-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #49a94e; }
 .status-dot::after { content: ""; position: absolute; inset: -4px; border: 1px solid #49a94e; border-radius: inherit; opacity: .35; animation: pulse 2s infinite; }
 @keyframes pulse { 50% { transform: scale(1.35); opacity: 0; } }
@@ -221,7 +223,8 @@ button { font: inherit; }
   .mobile-nav.open { display: flex; }
   .mobile-nav a { padding: 13px 0; border-bottom: 1px solid var(--line); font-family: var(--nav-mono); font-size: 30px; font-weight: 700; letter-spacing: -.055em; }
   .hero { padding-top: 30px; }
-  .hero-status { justify-content: flex-start; }
+  .hero-meta { align-items: flex-start; flex-direction: column; gap: 15px; }
+  .hero-meta .eyebrow, .hero-status { font-size: 12px; }
   .hero-grid { min-height: auto; padding: 55px 0 60px; gap: 55px; }
   .hero-copy h1 { font-size: clamp(47px, 14vw, 68px); }
   .hero-intro { font-size: 16px; }
