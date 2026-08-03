@@ -78,6 +78,35 @@ test('returns a concise Gemini answer for an in-scope question', async () => {
   }
 });
 
+test('returns the resume PDF directly without calling Gemini', async () => {
+  const originalFetch = globalThis.fetch;
+  let called = false;
+  globalThis.fetch = async () => {
+    called = true;
+    throw new Error('Gemini should not be called for direct resources');
+  };
+
+  try {
+    const response = await worker.fetch(request('Give me his resume'), environment());
+    const body = await response.json();
+    assert.equal(response.status, 200);
+    assert.equal(body.links.length, 1);
+    assert.equal(body.links[0].label, 'Open resume PDF');
+    assert.equal(body.links[0].url, 'https://codeholic08.github.io/Resume.pdf');
+    assert.equal(called, false);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('returns requested social profile links directly', async () => {
+  const response = await worker.fetch(request('Share his LinkedIn, Instagram, and GitHub'), environment());
+  const body = await response.json();
+  assert.equal(response.status, 200);
+  assert.deepEqual(body.links.map((link) => link.label), ['Open LinkedIn', 'Open GitHub', 'Open Instagram']);
+  assert.ok(body.links.every((link) => link.url.startsWith('https://')));
+});
+
 test('enforces the server rate limit', async () => {
   const response = await worker.fetch(request('What are Maaz skills?'), environment(false));
   assert.equal(response.status, 429);

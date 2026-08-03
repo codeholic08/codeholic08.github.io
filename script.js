@@ -85,7 +85,7 @@ if (chatRoot && (chatApiUrl || chatPreview)) {
     if (open) window.setTimeout(() => input.focus(), 50);
   }
 
-  function addMessage(role, text, extraClass = '') {
+  function addMessage(role, text, extraClass = '', links = []) {
     const message = document.createElement('div');
     message.className = `chat-message chat-message-${role}${extraClass ? ` ${extraClass}` : ''}`;
     const label = document.createElement('span');
@@ -93,6 +93,31 @@ if (chatRoot && (chatApiUrl || chatPreview)) {
     const content = document.createElement('p');
     content.textContent = text;
     message.append(label, content);
+
+    if (role === 'assistant' && Array.isArray(links) && links.length) {
+      const linkList = document.createElement('div');
+      linkList.className = 'chat-response-links';
+      links.forEach((link) => {
+        if (!link || typeof link.label !== 'string' || typeof link.url !== 'string') return;
+        let url;
+        try {
+          url = new URL(link.url);
+        } catch {
+          return;
+        }
+        if (!['https:', 'mailto:'].includes(url.protocol)) return;
+        const anchor = document.createElement('a');
+        anchor.href = url.href;
+        anchor.textContent = link.label;
+        if (url.protocol === 'https:') {
+          anchor.target = '_blank';
+          anchor.rel = 'noopener';
+        }
+        linkList.append(anchor);
+      });
+      if (linkList.childElementCount) message.append(linkList);
+    }
+
     messages.append(message);
     messages.scrollTop = messages.scrollHeight;
     return message;
@@ -127,7 +152,7 @@ if (chatRoot && (chatApiUrl || chatPreview)) {
       if (!response.ok) throw new Error(data.error || 'The assistant is unavailable right now.');
 
       loading.remove();
-      addMessage('assistant', data.answer || "I don't have that information in Maaz's portfolio.");
+      addMessage('assistant', data.answer || "I don't have that information in Maaz's portfolio.", '', data.links);
       questionCount += 1;
       sessionStorage.setItem(countKey, String(questionCount));
     } catch (error) {

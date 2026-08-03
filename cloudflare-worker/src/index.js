@@ -49,10 +49,20 @@ Technical toolkit:
 
 Contact and profiles:
 - Email: mr7374@nyu.edu
+- Resume PDF: https://codeholic08.github.io/Resume.pdf
 - LinkedIn: https://www.linkedin.com/in/rashid-maaz/
 - GitHub: https://github.com/codeholic08
+- Instagram: https://www.instagram.com/itsmaazr/
 - Portfolio: https://codeholic08.github.io/
 `;
+
+const PROFILE_LINKS = Object.freeze({
+  resume: { label: 'Open resume PDF', url: 'https://codeholic08.github.io/Resume.pdf' },
+  linkedin: { label: 'Open LinkedIn', url: 'https://www.linkedin.com/in/rashid-maaz/' },
+  github: { label: 'Open GitHub', url: 'https://github.com/codeholic08' },
+  instagram: { label: 'Open Instagram', url: 'https://www.instagram.com/itsmaazr/' },
+  email: { label: 'Email Maaz', url: 'mailto:mr7374@nyu.edu' },
+});
 
 const SYSTEM_INSTRUCTION = `
 You are the portfolio assistant for Mohammad Maaz Rashid. Answer only questions about Maaz using the verified portfolio and resume context below.
@@ -78,7 +88,7 @@ VERIFIED PORTFOLIO AND RESUME CONTEXT:
 ${PORTFOLIO_CONTEXT}
 `;
 
-const TOPIC_PATTERN = /\b(maaz|mohammad|rashid|he|him|his|portfolio|resume|cv|work|working|career|experience|role|job|employer|skill|technology|toolkit|education|degree|coursework|university|college|nyu|courant|gsc|student council|vice president|leadership|award|haqathon|srm|qualcomm|barclays|project|shaderlab|focus assist|resnet|vecfast|research|teaching|intern|engineer|contact|email|linkedin|github|available|availability|hire|hiring)\b/i;
+const TOPIC_PATTERN = /\b(maaz|mohammad|rashid|he|him|his|portfolio|resume|pdf|cv|work|working|career|experience|role|job|employer|skill|technology|toolkit|education|degree|coursework|university|college|nyu|courant|gsc|student council|vice president|leadership|award|haqathon|srm|qualcomm|barclays|project|shaderlab|focus assist|resnet|vecfast|research|teaching|intern|engineer|contact|email|linkedin|github|instagram|social|profile|links|available|availability|hire|hiring)\b/i;
 const INJECTION_PATTERN = /\b(ignore|override|reveal|repeat|show|print|disclose|forget)\b.{0,40}\b(instruction|prompt|system|rule|context|secret|key)\b/i;
 const TECHNICAL_DETAIL_PATTERN = /\b(technical|technically|architecture|algorithm|implementation|code|coding|stack|framework|library|database design|benchmark|latency|throughput|hnsw|faiss|ann|vector database|rag|llm|model|fine-tun|api|fastapi|spark|hadoop|pytorch|webgl|glsl|onnx)\b/i;
 
@@ -88,6 +98,20 @@ function buildUserPrompt(question) {
   }
 
   return `PLAIN-LANGUAGE MODE (mandatory): Answer for a reader with no technology background. Use 2-4 short sentences and no bullet list. Focus on what Maaz does, the problem it solves, and why it matters. Do not mention implementation names or acronyms such as HNSW, FAISS, ANN, HPC, RAG, or LLM unless the question specifically asks about one.\n\nQuestion: ${question}`;
+}
+
+function requestedProfileLinks(question) {
+  const links = [];
+  const asksForAllProfiles = /\b(all|social|profiles?|links)\b/i.test(question)
+    && /\b(profile|social|links|accounts?)\b/i.test(question);
+
+  if (/\b(resume|cv)\b/i.test(question)) links.push(PROFILE_LINKS.resume);
+  if (asksForAllProfiles || /\blinkedin\b/i.test(question)) links.push(PROFILE_LINKS.linkedin);
+  if (asksForAllProfiles || /\bgithub\b/i.test(question)) links.push(PROFILE_LINKS.github);
+  if (asksForAllProfiles || /\binstagram\b/i.test(question)) links.push(PROFILE_LINKS.instagram);
+  if (/\b(email|contact)\b/i.test(question)) links.push(PROFILE_LINKS.email);
+
+  return [...new Map(links.map((link) => [link.url, link])).values()];
 }
 
 function jsonResponse(body, status, origin, extraHeaders = {}) {
@@ -180,6 +204,15 @@ export default {
         200,
         origin,
       );
+    }
+
+    const profileLinks = requestedProfileLinks(question);
+    if (profileLinks.length) {
+      const hasResume = profileLinks.some((link) => link.url.endsWith('/Resume.pdf'));
+      const answer = profileLinks.length === 1
+        ? (hasResume ? "Here is Maaz's resume PDF." : `Here is Maaz's ${profileLinks[0].label.replace('Open ', '')}.`)
+        : "Here are Maaz's requested profiles.";
+      return jsonResponse({ answer, links: profileLinks }, 200, origin);
     }
 
     if (!env.GEMINI_API_KEY) {

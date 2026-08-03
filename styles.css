@@ -219,6 +219,10 @@ button { font: inherit; }
 .chat-message-user > span { text-align: right; }
 .chat-message-user p { background: var(--ink); color: white; }
 .chat-message-error p { border-color: #b42b2b; color: #8e2020; }
+.chat-response-links { display: grid; gap: 7px; margin-top: 7px; }
+.chat-response-links a { padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--ink); background: var(--lime); color: var(--ink); font-family: var(--mono); font-size: 11px; letter-spacing: .03em; }
+.chat-response-links a::after { content: "\2197"; font-size: 14px; }
+.chat-response-links a:hover, .chat-response-links a:focus-visible { background: var(--ink); color: var(--lime); }
 .chat-message-loading p::after { content: ""; display: inline-block; width: 16px; height: 8px; margin-left: 5px; background: radial-gradient(circle closest-side, currentColor 90%, transparent) 0 50% / 5px 5px repeat-x; animation: chat-loading .8s infinite linear; }
 @keyframes chat-loading { to { background-position: 10px 50%; } }
 .chat-suggestions { display: flex; flex-wrap: wrap; gap: 7px; }
