@@ -84,16 +84,16 @@ button { font: inherit; }
 .text-link { font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--ink); }
 .text-link span { margin-left: 6px; }
 
-.hero-visual { position: relative; display: grid; place-items: center; min-height: 620px; }
-.portrait-frame { position: relative; z-index: 3; width: min(440px, 94%); aspect-ratio: 4 / 5; padding: 12px; background: var(--paper-bright); border: 1px solid var(--ink); transform: rotate(2.5deg); box-shadow: 12px 14px 0 var(--ink); }
+.hero-visual { position: relative; display: grid; place-items: center; min-height: 650px; }
+.portrait-frame { position: relative; z-index: 3; width: min(465px, 96%); aspect-ratio: 4 / 5; padding: 12px; background: var(--paper-bright); border: 1px solid var(--ink); transform: rotate(2.5deg); box-shadow: 12px 14px 0 var(--ink); }
 .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; filter: saturate(.78) contrast(1.04); }
-.portrait-label { position: absolute; right: -32px; bottom: 32px; width: 92px; height: 92px; display: grid; place-content: center; text-align: center; border-radius: 50%; background: var(--lime); border: 1px solid var(--ink); color: var(--ink); transform: rotate(-8deg); }
+.portrait-label { position: absolute; right: -34px; bottom: 34px; width: 98px; height: 98px; display: grid; place-content: center; text-align: center; border-radius: 50%; background: var(--lime); border: 1px solid var(--ink); color: var(--ink); transform: rotate(-8deg); }
 .portrait-label span { font-family: var(--mono); font-size: 8px; text-transform: uppercase; letter-spacing: .08em; }
 .portrait-label strong { font-size: 25px; line-height: 1; }
 .orbit { position: absolute; border: 1px solid rgba(11,13,12,.28); border-radius: 50%; }
-.orbit-one { width: 470px; height: 470px; }
-.orbit-two { width: 350px; height: 500px; transform: rotate(42deg); }
-.visual-note { position: absolute; z-index: 4; padding: 9px 12px; background: var(--paper-bright); border: 1px solid var(--ink); font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .04em; box-shadow: 4px 4px 0 var(--ink); }
+.orbit-one { width: 500px; height: 500px; }
+.orbit-two { width: 370px; height: 530px; transform: rotate(42deg); }
+.visual-note { position: absolute; z-index: 4; padding: 10px 13px; background: var(--paper-bright); border: 1px solid var(--ink); font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; box-shadow: 4px 4px 0 var(--ink); }
 .visual-note span { color: #767b76; margin-right: 8px; }
 .note-one { left: -15px; top: 28%; transform: rotate(-4deg); }
 .note-two { right: -8px; top: 18%; transform: rotate(3deg); }
@@ -245,6 +245,7 @@ button { font: inherit; }
   .hero-visual { min-height: 440px; }
   .portrait-frame { width: min(300px, 82%); box-shadow: 8px 9px 0 var(--ink); }
   .portrait-label { right: -20px; width: 75px; height: 75px; }
+  .visual-note { padding: 9px 12px; font-size: 10px; }
   .orbit-one { width: 340px; height: 340px; }
   .orbit-two { width: 260px; height: 380px; }
   .note-one { left: 0; top: 26%; }
