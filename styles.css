@@ -52,7 +52,7 @@ button { font: inherit; }
 .wordmark { justify-self: start; display: inline-flex; align-items: baseline; font-family: var(--nav-mono); font-size: 27px; font-weight: 700; line-height: 1; letter-spacing: 0; }
 .wordmark-name { color: #1687a2; }
 .wordmark-dot { margin-left: 2px; color: var(--ink); }
-.wordmark-underscore { margin-left: 4px; color: #7857d7; }
+.wordmark-underscore { margin-left: -7px; color: #7857d7; }
 .desktop-nav { display: flex; align-items: center; gap: 42px; font-family: var(--nav-mono); font-size: 15px; font-weight: 700; letter-spacing: -.035em; }
 .desktop-nav a, .header-cta { position: relative; }
 .desktop-nav a::before, .header-cta::before, .mobile-nav a::before { content: "//"; margin-right: 9px; font-weight: 400; }
