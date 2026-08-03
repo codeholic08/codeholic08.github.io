@@ -148,7 +148,7 @@ button { font: inherit; }
 .project-card + .project-card { border-left: 0; }
 .project-lime { background: var(--lime); }
 .project-paper { background: var(--paper-bright); }
-.project-number { align-self: flex-end; font-family: var(--mono); font-size: 9px; }
+.project-number { align-self: flex-end; font-family: var(--mono); font-size: 14px; }
 .project-card .eyebrow { margin-bottom: 18px; }
 .project-card h3 { font-size: clamp(44px, 5vw, 68px); }
 .project-card p { max-width: 530px; }
