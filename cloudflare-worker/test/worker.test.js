@@ -56,6 +56,9 @@ test('returns a concise Gemini answer for an in-scope question', async () => {
     const requestBody = JSON.parse(options.body);
     assert.equal(requestBody.generationConfig.maxOutputTokens, 1024);
     assert.equal(requestBody.generationConfig.thinkingConfig.thinkingLevel, 'minimal');
+    assert.match(requestBody.systemInstruction.parts[0].text, /Vice President of Communications, NYU Graduate Student Council/);
+    assert.match(requestBody.systemInstruction.parts[0].text, /6,000\+ students/);
+    assert.doesNotMatch(requestBody.systemInstruction.parts[0].text, /929.*726.*4505/);
     return new Response(JSON.stringify({
       candidates: [{ content: { parts: [{ text: 'Maaz works on vector search at NYU.' }] } }],
     }), { status: 200, headers: { 'Content-Type': 'application/json' } });

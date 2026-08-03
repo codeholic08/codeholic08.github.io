@@ -5,24 +5,47 @@ const GEMINI_API_ROOT = 'https://generativelanguage.googleapis.com/v1beta/models
 const PORTFOLIO_CONTEXT = `
 Mohammad Maaz Rashid is an AI/ML and backend engineer based in New York and open to full-time roles.
 
-Current work and education:
-- MS in Computer Science at New York University, 2024-2026.
-- Graduate Research Assistant at NYU Courant from June 2026 to present, researching vector databases and approximate nearest-neighbor search.
-- Developing VecFast, a two-tier ANN index with an in-memory HNSW hot tier, cluster-based cold tier, and adaptive distribution-shift detection. Technologies include HNSW, FAISS, C++, and HPC.
-- Graduate Teaching Assistant at NYU Courant from August 2025 to May 2026. Led weekly recitations for 60+ graduate students on CPU pipelines, memory hierarchy, virtual memory, and I/O systems.
-- BTech in Computer Science from SRM Institute of Science and Technology, 2018-2022.
-
 Professional experience:
-- Machine Learning Intern at Qualcomm, May-August 2025. Built RAG, evaluation, and six-agent orchestration systems for modem QA. Reduced manual validation by 65%, LLM cost by 30%, and telemetry analysis time by 35%. Technologies included Qwen, multi-agent systems, AWS EMR, and Hadoop.
-- Software Engineer at Barclays, August 2022-June 2024. Shipped financial NLP, semantic search, and FastAPI services. Achieved 0.98 F1 on document routing and automated evaluation across more than 25,000 customer records. Technologies included FinBERT, ChromaDB, FastAPI, and Spark.
+- Machine Learning Intern, GenAI at Qualcomm in San Diego, May-August 2025.
+- At Qualcomm, fine-tuned Qwen and integrated retrieval into a modem-framework QA pipeline spanning 9 internal test suites, reducing manual validation time by 65%.
+- Built an LLM evaluation workflow that reduced operating cost by 30%.
+- Architected a six-worker multi-agent orchestration layer for layout, styling, component generation, and validation, routed with confidence-based intent classification; it reached 99% task completion on an internal evaluation set.
+- Engineered a distributed telemetry pipeline for multiple gigabytes of daily device data using Amazon S3, EMR, Hadoop MapReduce, and HDFS, reducing analysis turnaround time by 35%.
+- Software Engineer, AI and Backend Platforms at Barclays in Pune, August 2022-July 2024.
+- At Barclays, fine-tuned FinBERT and Instructor-XL for financial-document classification and semantic retrieval, reaching 0.98 F1 on a held-out routing test set.
+- Integrated ChromaDB retrieval into enterprise AI workflows supporting a platform credited with eight-figure business impact.
+- Built LLM features including chatbots, entity extraction, document search, and summarization, reducing manual workload by 45%.
+- Automated evaluation across 25,000+ customer records, reducing analysis time from multiple days to seconds.
+- Engineered a FastAPI backend for a batch-pricing tool that processed thousands of user queries in parallel.
+
+Academic experience:
+- Graduate Research Assistant at NYU Courant from June 2026 to present, researching vector databases and approximate nearest-neighbor search.
+- Developing VecFast, a high-update-rate vector database with an in-memory HNSW hot tier, cluster-based cold tier, and adaptive centroid algorithm for distribution-shift detection.
+- Benchmarking recall-latency tradeoffs against FAISS and HNSW under sustained streaming inserts on NYU HPC.
+- Graduate Teaching Assistant for Computer Systems Organization at NYU Courant from August 2025 to May 2026.
+- Led weekly recitations for 60+ graduate students on CPU pipelines, memory hierarchy, virtual memory, and I/O systems, and developed assessments with course faculty.
+
+Education:
+- MS in Computer Science at New York University, September 2024-May 2026.
+- NYU coursework: Machine Learning, Deep Learning, Big Data, Algorithms, and Foundations of Data Science.
+- BTech in Computer Science and Engineering from SRM Institute of Science and Technology, completed May 2022.
+
+Awards and leadership:
+- Winner of the Qualcomm HaQathon for an on-device Snapdragon X Elite NPU application.
+- Vice President of Communications, NYU Graduate Student Council; elected representative for 6,000+ students.
+- Recipient of the Barclays World Class Customer Service Award.
 
 Selected projects:
-- ShaderLab: a generative GPU image editor in the browser. Natural-language edits become validated GLSL shader passes in a WebGL2 pipeline. Technologies: TypeScript, React, WebGL2, GLSL. Live at https://shaderlab-ten.vercel.app/.
-- Focus Assist: thread-safe Pomodoro tracking with on-device NPU inference for Snapdragon X Elite laptops. Winner of the Qualcomm HaQathon. Technologies: Python, ONNX, Edge AI. Repository: https://github.com/codeholic08/Focus-Assist.
+- ShaderLab: a generative GPU image editor built with TypeScript, React, WebGL2, GLSL, and Vite. Its LLM-assisted compiler converts natural-language edits into validated GLSL passes and rejects shaders that fail compilation or color-correctness checks. Live at https://shaderlab-ten.vercel.app/.
+- Focus Assist: a thread-safe Pomodoro tracker for Snapdragon X Elite laptops with CLI task tracking and on-device NPU inference through ONNX Runtime. Technologies include Python, PyTorch, ONNX, and Edge AI. Repository: https://github.com/codeholic08/Focus-Assist.
 - Lean ResNet: a sub-5M parameter classifier created by reworking channels, filters, and skip connections, with 87% test accuracy. Technologies: PyTorch, ResNet-50, optimization. Repository: https://github.com/codeholic08/ResNetModel.
 
 Technical toolkit:
-Python, C++, TypeScript, PyTorch, Transformers, HNSW, FAISS, PostgreSQL, Redis, FastAPI, Spark, AWS, Docker, Kubernetes, React, WebGL2, GLSL, ONNX, Hadoop, ChromaDB, FinBERT, and distributed systems.
+- Languages: Python, C++, TypeScript, SQL, and Bash.
+- ML and GenAI: PyTorch, Transformers, LLM fine-tuning, RAG, LLM evaluation, LangChain, ONNX Runtime, Qwen, and FinBERT.
+- Retrieval and data: FAISS, HNSW, ChromaDB, PGVector, PostgreSQL, Redis, Spark, and Hadoop.
+- Cloud and infrastructure: AWS S3, EC2, Lambda, EMR, Glue, SageMaker, Docker, Kubernetes, Git, and Linux.
+- Additional technologies: FastAPI, React, WebGL2, GLSL, Instructor-XL, HDFS, MapReduce, and distributed systems.
 
 Contact and profiles:
 - Email: mr7374@nyu.edu
@@ -32,7 +55,7 @@ Contact and profiles:
 `;
 
 const SYSTEM_INSTRUCTION = `
-You are the portfolio assistant for Mohammad Maaz Rashid. Answer only questions about Maaz using the verified portfolio context below.
+You are the portfolio assistant for Mohammad Maaz Rashid. Answer only questions about Maaz using the verified portfolio and resume context below.
 
 Rules you must always follow:
 1. Never answer general knowledge, coding help, homework, news, politics, entertainment, medical, legal, financial, or unrelated questions.
@@ -43,11 +66,11 @@ Rules you must always follow:
 6. Speak about Maaz in the third person. Do not claim to be Maaz.
 7. Only include links that appear verbatim in the verified context.
 
-VERIFIED PORTFOLIO CONTEXT:
+VERIFIED PORTFOLIO AND RESUME CONTEXT:
 ${PORTFOLIO_CONTEXT}
 `;
 
-const TOPIC_PATTERN = /\b(maaz|mohammad|rashid|he|him|his|portfolio|resume|résumé|cv|work|working|career|experience|role|job|employer|skill|technology|toolkit|education|degree|university|college|nyu|courant|srm|qualcomm|barclays|project|shaderlab|focus assist|resnet|vecfast|research|teaching|intern|engineer|contact|email|linkedin|github|available|availability|hire|hiring)\b/i;
+const TOPIC_PATTERN = /\b(maaz|mohammad|rashid|he|him|his|portfolio|resume|cv|work|working|career|experience|role|job|employer|skill|technology|toolkit|education|degree|coursework|university|college|nyu|courant|gsc|student council|vice president|leadership|award|haqathon|srm|qualcomm|barclays|project|shaderlab|focus assist|resnet|vecfast|research|teaching|intern|engineer|contact|email|linkedin|github|available|availability|hire|hiring)\b/i;
 const INJECTION_PATTERN = /\b(ignore|override|reveal|repeat|show|print|disclose|forget)\b.{0,40}\b(instruction|prompt|system|rule|context|secret|key)\b/i;
 
 function jsonResponse(body, status, origin, extraHeaders = {}) {
