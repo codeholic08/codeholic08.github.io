@@ -58,6 +58,10 @@ test('returns a concise Gemini answer for an in-scope question', async () => {
     assert.equal(requestBody.generationConfig.thinkingConfig.thinkingLevel, 'minimal');
     assert.match(requestBody.systemInstruction.parts[0].text, /Vice President of Communications, NYU Graduate Student Council/);
     assert.match(requestBody.systemInstruction.parts[0].text, /6,000\+ students/);
+    assert.match(requestBody.systemInstruction.parts[0].text, /Write for a non-technical reader by default/);
+    assert.match(requestBody.systemInstruction.parts[0].text, /Avoid acronyms, product names, architecture details/);
+    assert.match(requestBody.contents[0].parts[0].text, /PLAIN-LANGUAGE MODE \(mandatory\)/);
+    assert.match(requestBody.contents[0].parts[0].text, /no bullet list/);
     assert.doesNotMatch(requestBody.systemInstruction.parts[0].text, /929.*726.*4505/);
     return new Response(JSON.stringify({
       candidates: [{ content: { parts: [{ text: 'Maaz works on vector search at NYU.' }] } }],
