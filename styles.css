@@ -157,6 +157,7 @@ button { font: inherit; }
 .experience-role { display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: start; }
 .company-mark { width: 165px; height: 90px; padding: 0; display: grid; place-items: center; background: transparent; transform: translate(-44px, -22px); }
 .company-mark img { width: 100%; max-height: 90px; object-fit: contain; object-position: left top; }
+.company-mark img[src*="Qualcommlogo"], .company-mark img[src*="barclayslogo"] { transform: scale(1.12); transform-origin: left top; }
 .experience-role h3 { margin: 0 0 5px; font-size: 22px; line-height: 1.25; }
 .experience-role p { margin: 0; color: #9da49e; font-size: 14px; }
 .experience-detail > p { margin: 0; color: #c1c7c2; font-size: 17px; line-height: 1.7; }
