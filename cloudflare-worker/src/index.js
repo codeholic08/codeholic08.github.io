@@ -1,5 +1,5 @@
 const MAX_QUESTION_LENGTH = 350;
-const DEFAULT_MODEL = 'gemini-3.5-flash';
+const DEFAULT_MODEL = 'gemini-3.5-flash-lite';
 const GEMINI_API_ROOT = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 const PORTFOLIO_CONTEXT = `
@@ -82,6 +82,12 @@ function extractAnswer(payload) {
     .trim();
 }
 
+function limitAnswer(answer, maxWords = 120) {
+  const words = answer.split(/\s+/).filter(Boolean);
+  if (words.length <= maxWords) return answer;
+  return `${words.slice(0, maxWords).join(' ')}...`;
+}
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get('Origin') || '';
@@ -151,9 +157,10 @@ export default {
         systemInstruction: { parts: [{ text: SYSTEM_INSTRUCTION }] },
         contents: [{ role: 'user', parts: [{ text: question }] }],
         generationConfig: {
-          temperature: 0.15,
-          topP: 0.8,
-          maxOutputTokens: 220,
+          maxOutputTokens: 1024,
+          thinkingConfig: {
+            thinkingLevel: 'minimal',
+          },
         },
       }),
     });
@@ -168,6 +175,6 @@ export default {
       return jsonResponse({ error: 'The assistant could not produce an answer.' }, 502, origin);
     }
 
-    return jsonResponse({ answer }, 200, origin);
+    return jsonResponse({ answer: limitAnswer(answer) }, 200, origin);
   },
 };

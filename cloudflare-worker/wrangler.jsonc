@@ -9,7 +9,7 @@
   },
   "vars": {
     "ALLOWED_ORIGIN": "https://codeholic08.github.io",
-    "GEMINI_MODEL": "gemini-3.5-flash"
+    "GEMINI_MODEL": "gemini-3.5-flash-lite"
   },
   "ratelimits": [
     {
