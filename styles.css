@@ -178,9 +178,9 @@ button { font: inherit; }
 .about-copy > p { color: #555a56; font-size: 17px; }
 .about-copy .about-lead { margin-top: 0; color: var(--ink); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.48; letter-spacing: -.02em; }
 .education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line); }
-.education-grid span { color: var(--muted); font-family: var(--mono); font-size: 12px; }
-.education-grid strong { display: block; margin-top: 11px; font-size: 18px; }
-.education-grid p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.education-grid span { color: var(--muted); font-family: var(--mono); font-size: 14px; }
+.education-grid strong { display: block; margin-top: 13px; font-size: 22px; }
+.education-grid p { margin: 6px 0 0; color: var(--muted); font-size: 17px; }
 .toolkit { display: grid; grid-template-columns: .3fr 1.7fr; gap: 30px; margin-top: 105px; padding-top: 30px; border-top: 1px solid var(--ink); }
 .toolkit-title { font-family: var(--mono); font-size: 14px; letter-spacing: .06em; }
 .toolkit > div { display: flex; flex-wrap: wrap; gap: 10px; }
