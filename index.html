@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohammad Maaz Rashid - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -19,13 +21,12 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-menu" id="nav-menu">
-                <a href="#about" class="nav-link active">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#research" class="nav-link">Research</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link active">// home</a>
+                <a href="#expertise" class="nav-link">// expertise</a>
+                <a href="#experience" class="nav-link">// experience</a>
+                <a href="#education" class="nav-link">// education</a>
+                <a href="#projects" class="nav-link">// projects</a>
+                <a href="#contact" class="nav-link">// contact</a>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -74,10 +75,10 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
+    <!-- Expertise Section -->
+    <section id="expertise" class="skills-section">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title">Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Languages</h3>
@@ -136,71 +137,10 @@
         </div>
     </section>
 
-    <!-- Work Experience Section -->
-    <section id="work" class="work-section">
+    <!-- Experience Section -->
+    <section id="experience" class="work-section">
         <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <span class="date-range">2025.05 - 2025.08</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <a href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer">
-                                <img src="logo/Qualcommlogo.png" alt="Qualcomm Logo" class="logo">
-                            </a>
-                        </div>
-                        <h3 class="job-title">Machine Learning Intern</h3>
-                        <h4 class="company">Qualcomm</h4>
-                        <p class="job-description">
-                            Fine-tuned Qwen and integrated a retrieval layer into the modem-framework QA pipeline to automate test-scenario validation across 9 internal test suites, reducing manual validation time by 65%. Developed an LLM evaluation workflow measuring response quality, prompt efficiency, and redundant API calls, cutting LLM operating cost by 30%. Architected a multi-agent orchestration layer coordinating six specialized workers, routed by confidence-based intent classification, reaching 99% task completion. Engineered a distributed telemetry pipeline ingesting multiple gigabytes of daily device data into AWS S3 and processing it on AWS EMR via parallel Hadoop MapReduce jobs over HDFS, cutting telemetry-analysis turnaround by 35%.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Qwen</span>
-                            <span class="tech-tag">Multi-Agent Orchestration</span>
-                            <span class="tech-tag">AWS S3</span>
-                            <span class="tech-tag">AWS EMR</span>
-                            <span class="tech-tag">Apache Hadoop</span>
-                            <span class="tech-tag">Spark</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <span class="date-range">2022.08 - 2024.06</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <a href="https://home.barclays/" target="_blank" rel="noopener noreferrer">
-                                <img src="logo/barclayslogo.png" alt="Barclays Logo" class="logo barclays-logo">
-                            </a>
-                        </div>
-                        <h3 class="job-title">Software Engineer</h3>
-                        <h4 class="company">Barclays</h4>
-                        <p class="job-description">
-                            Fine-tuned FinBERT and Instructor-XL for financial-document classification and semantic retrieval using few-shot and post-training techniques, achieving 0.98 F1 on a held-out routing test set. Integrated ChromaDB-backed semantic retrieval into enterprise AI workflows supporting a platform credited with eight-figure business impact. Developed LLM-powered chatbots, entity extraction, document search, and summarization tools, reducing manual workload by 45%. Automated performance evaluation across 25,000+ customer records, cutting end-to-end analysis time from days to seconds. Engineered the FastAPI backend for a batch-pricing tool processing thousands of user queries in parallel.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">FinBERT</span>
-                            <span class="tech-tag">Instructor-XL</span>
-                            <span class="tech-tag">ChromaDB</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">AWS S3</span>
-                            <span class="tech-tag">AWS Glue</span>
-                            <span class="tech-tag">AWS EMR</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Academic / Research Experience Section -->
-    <section id="research" class="work-section">
-        <div class="container">
-            <h2 class="section-title">Academic Experience</h2>
+            <h2 class="section-title">Experience</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">
@@ -246,6 +186,59 @@
                             <span class="tech-tag">Computer Architecture</span>
                             <span class="tech-tag">Systems</span>
                             <span class="tech-tag">Teaching</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-range">2025.05 - 2025.08</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <a href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer">
+                                <img src="logo/Qualcommlogo.png" alt="Qualcomm Logo" class="logo">
+                            </a>
+                        </div>
+                        <h3 class="job-title">Machine Learning Intern</h3>
+                        <h4 class="company">Qualcomm</h4>
+                        <p class="job-description">
+                            Fine-tuned Qwen and integrated a retrieval layer into the modem-framework QA pipeline to automate test-scenario validation across 9 internal test suites, reducing manual validation time by 65%. Developed an LLM evaluation workflow measuring response quality, prompt efficiency, and redundant API calls, cutting LLM operating cost by 30%. Architected a multi-agent orchestration layer coordinating six specialized workers, routed by confidence-based intent classification, reaching 99% task completion. Engineered a distributed telemetry pipeline ingesting multiple gigabytes of daily device data into AWS S3 and processing it on AWS EMR via parallel Hadoop MapReduce jobs over HDFS, cutting telemetry-analysis turnaround by 35%.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Qwen</span>
+                            <span class="tech-tag">Multi-Agent Orchestration</span>
+                            <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">AWS EMR</span>
+                            <span class="tech-tag">Apache Hadoop</span>
+                            <span class="tech-tag">Spark</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        <span class="date-range">2022.08 - 2024.06</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <a href="https://home.barclays/" target="_blank" rel="noopener noreferrer">
+                                <img src="logo/barclayslogo.png" alt="Barclays Logo" class="logo barclays-logo">
+                            </a>
+                        </div>
+                        <h3 class="job-title">Software Engineer</h3>
+                        <h4 class="company">Barclays</h4>
+                        <p class="job-description">
+                            Fine-tuned FinBERT and Instructor-XL for financial-document classification and semantic retrieval using few-shot and post-training techniques, achieving 0.98 F1 on a held-out routing test set. Integrated ChromaDB-backed semantic retrieval into enterprise AI workflows supporting a platform credited with eight-figure business impact. Developed LLM-powered chatbots, entity extraction, document search, and summarization tools, reducing manual workload by 45%. Automated performance evaluation across 25,000+ customer records, cutting end-to-end analysis time from days to seconds. Engineered the FastAPI backend for a batch-pricing tool processing thousands of user queries in parallel.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">FinBERT</span>
+                            <span class="tech-tag">Instructor-XL</span>
+                            <span class="tech-tag">ChromaDB</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">AWS Glue</span>
+                            <span class="tech-tag">AWS EMR</span>
                         </div>
                     </div>
                 </div>
@@ -312,8 +305,14 @@
     <section id="projects" class="work-section">
         <div class="container">
             <h2 class="section-title">Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI / ML</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="systems">Systems</button>
+            </div>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="web ai">
                     <div class="timeline-date">
                         <span class="date-range">2026</span>
                     </div>
@@ -337,7 +336,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="systems ai">
                     <div class="timeline-date">
                         <span class="date-range">2025</span>
                     </div>
@@ -361,7 +360,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="ai">
                     <div class="timeline-date">
                         <span class="date-range">2024</span>
                     </div>
@@ -393,6 +392,7 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
+                <p class="availability-tag">// open to full-time ML, AI, Data & Software Engineering roles</p>
                 <p class="contact-description">
                     I am available over email anytime! Feel free to reach out for opportunities, collaborations, or just to connect.
                 </p>

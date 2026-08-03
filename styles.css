@@ -15,11 +15,12 @@ html {
     --bg-primary: #ffffff;
     --bg-secondary: #f8fafc;
     --bg-tertiary: #e2e8f0;
-    --text-primary: #1e293b;
-    --text-secondary: #64748b;
-    --text-tertiary: #475569;
-    --accent-primary: #007acc;
-    --accent-secondary: #005c99;
+    --text-primary: #17161a;
+    --text-secondary: #6a696c;
+    --text-tertiary: #48474a;
+    --accent-primary: #d90a2c;
+    --accent-secondary: #a80723;
+    --accent-primary-rgb: 217, 10, 44;
     --border-color: #e5e7eb;
     --shadow-light: rgba(0, 0, 0, 0.05);
     --shadow-medium: rgba(0, 0, 0, 0.1);
@@ -32,30 +33,35 @@ html {
 
 [data-theme="dark"] {
     /* Dark Theme */
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
+    --bg-primary: #17161a;
+    --bg-secondary: #232226;
+    --bg-tertiary: #323131;
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
     --text-tertiary: #94a3b8;
-    --accent-primary: #38bdf8;
-    --accent-secondary: #0ea5e9;
-    --border-color: #334155;
+    --accent-primary: #fd4577;
+    --accent-secondary: #d90a2c;
+    --accent-primary-rgb: 253, 69, 119;
+    --border-color: #383838;
     --shadow-light: rgba(0, 0, 0, 0.2);
     --shadow-medium: rgba(0, 0, 0, 0.3);
     --shadow-heavy: rgba(0, 0, 0, 0.4);
-    --nav-bg: rgba(15, 23, 42, 0.95);
-    --card-bg: #1e293b;
-    --skill-bg: #334155;
-    --skill-border: #475569;
+    --nav-bg: rgba(23, 22, 26, 0.95);
+    --card-bg: #232226;
+    --skill-bg: #323131;
+    --skill-border: #383838;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mono {
+    font-family: 'Roboto Mono', 'SF Mono', monospace;
 }
 
 .container {
@@ -102,7 +108,8 @@ body {
     border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    font-family: 'Roboto Mono', 'SF Mono', monospace;
 }
 
 .nav-link:hover {
@@ -618,6 +625,44 @@ body {
     opacity: 1;
 }
 
+/* Project Filters */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+    font-family: 'Roboto Mono', 'SF Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.5rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.timeline-item.filtered-out {
+    display: none !important;
+}
+
 /* AWS Skill Popup */
 .aws-skill {
     position: relative !important;
@@ -924,6 +969,15 @@ body {
 
 .contact-section .section-title {
     color: var(--text-primary);
+}
+
+.availability-tag {
+    text-align: center;
+    font-family: 'Roboto Mono', 'SF Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
 }
 
 .contact-description {

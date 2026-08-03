@@ -520,22 +520,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
+// Project Filters
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('#projects .timeline-item');
 
-// Apply debounce to scroll events
-const debouncedScrollHandler = debounce(function() {
-    updateActiveNav();
-}, 10);
+    filterButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-window.addEventListener('scroll', debouncedScrollHandler);
+            const filter = btn.getAttribute('data-filter');
+
+            projectItems.forEach(function(item) {
+                const categories = (item.getAttribute('data-category') || '').split(' ');
+                if (filter === 'all' || categories.includes(filter)) {
+                    item.classList.remove('filtered-out');
+                } else {
+                    item.classList.add('filtered-out');
+                }
+            });
+        });
+    });
+});
