@@ -1,479 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Maaz Rashid - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d0c">
+  <meta name="description" content="Mohammad Maaz Rashid is a software and machine learning engineer building AI infrastructure, retrieval systems, and production data platforms.">
+  <meta property="og:title" content="Mohammad Maaz Rashid — Software & ML Engineer">
+  <meta property="og:description" content="AI infrastructure, retrieval systems, and production software — from research to deployment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codeholic08.github.io/">
+  <meta property="og:image" content="https://codeholic08.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mohammad Maaz Rashid — Software & ML Engineer">
+  <meta name="twitter:description" content="AI infrastructure, retrieval systems, and production software — from research to deployment.">
+  <meta name="twitter:image" content="https://codeholic08.github.io/og.png">
+  <link rel="canonical" href="https://codeholic08.github.io/">
+  <title>Mohammad Maaz Rashid — Software & ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-indicator" id="scroll-indicator"></div>
-    
-    <!-- Gradient Cursor Effect -->
-    <div class="cursor-gradient" id="cursor-gradient"></div>
-    
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-menu" id="nav-menu">
-                <a href="#about" class="nav-link active">// home</a>
-                <a href="#expertise" class="nav-link">// expertise</a>
-                <a href="#experience" class="nav-link">// experience</a>
-                <a href="#education" class="nav-link">// education</a>
-                <a href="#projects" class="nav-link">// projects</a>
-                <a href="#contact" class="nav-link">// contact</a>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#top" aria-label="Mohammad Maaz Rashid, home">
+      <span>MMR</span><i></i>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
     </nav>
+    <a class="header-cta" href="mailto:mr7374@nyu.edu">Let's talk <span>↗</span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span><b class="sr-only">Open menu</b>
+    </button>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="title-header">
-                        <h1 class="main-title">Mohammad Maaz Rashid</h1>
-                        <p class="subtitle">Graduate Researcher @ NYU Courant | Ex-Qualcomm | Ex-Barclays</p>
-                    </div>
-                    <div class="location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>New York, USA</span>
-                    </div>
-                    <div class="about-description">
-                        <p>I'm a <code>Software Engineer</code> who came up through backend systems and moved toward <code>AI infrastructure</code>. Two years at <code>Barclays</code> building services and terabyte-scale data pipelines, an ML internship at <code>Qualcomm</code> on <code>RAG</code> and <code>multi-agent systems</code>, and an M.S. in Computer Science at <code>NYU</code>, where I now do <code>vector search</code> research.</p>
-
-                        <p>The thread through all of it is that I don't like working at one layer. At <code>Barclays</code> I was writing <code>FastAPI</code> services and also managing the <code>Spark</code> and <code>AWS</code> pipelines feeding them. At <code>Qualcomm</code> I built the agent system and the evaluation harness that judged it. I'd rather understand the whole path from data to production than own one well-defined piece of it, and that's the kind of team I'm looking for.</p>
-
-                        <p>At NYU Courant, I am developing <code>VecFast</code>, a high-update-rate vector database with a two-tier <code>ANN</code> index — an in-memory <code>HNSW</code> hot tier absorbing streaming inserts and a cluster-based cold tier, merged by an adaptive centroid algorithm that detects distribution shift — and benchmarking recall-latency tradeoffs against <code>FAISS</code> and <code>HNSW</code> baselines on NYU HPC.</p>
-
-                        <p>At <code>Qualcomm</code>, I fine-tuned <code>Qwen</code> and integrated a retrieval layer into a modem-framework QA pipeline, cutting manual validation time by <code>65%</code> across 9 test suites, and built an LLM evaluation workflow that reduced operating cost by <code>30%</code>. I also architected a multi-agent orchestration layer coordinating six specialized workers with confidence-based intent routing, reaching <code>99% task completion</code>, and engineered a distributed telemetry pipeline on <code>AWS EMR</code> and <code>Hadoop</code> that cut analysis turnaround by <code>35%</code>.</p>
-
-                        <p>Previously at <code>Barclays</code>, I fine-tuned <code>FinBERT</code> and <code>Instructor-XL</code> for financial-document classification and retrieval, achieving <code>0.98 F1</code>, and integrated <code>ChromaDB</code>-backed semantic search into a platform credited with eight-figure business impact. I built <code>LLM-powered</code> chatbots, entity extraction, and summarization tools that reduced manual workload by <code>45%</code>, automated performance evaluation across <code>25,000+</code> customer records, and engineered a <code>FastAPI</code> backend for a batch-pricing tool.</p>
-
-                        <p>Beyond engineering, I serve as <code>VP of Communications</code> for the <code>NYU Graduate Student Council</code> (6,000+ students), previously served as a <code>Graduate Teaching Assistant</code> for Computer Systems Organization at <code>NYU</code>, and am a recipient of the <code>Barclays World Class Customer Service Award</code>.</p>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="profile-image">
-                        <img src="Photo.jpeg" alt="Mohammad Maaz Rashid" id="profile-img">
-                    </div>
-                </div>
-            </div>
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-status reveal">
+        <span class="status-dot"></span>
+        New York · Open to full-time roles
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Software Engineer · ML Systems</p>
+          <h1 id="hero-title" class="reveal">I build intelligent systems that hold up in the <em>real world.</em></h1>
+          <p class="hero-intro reveal">I’m Mohammad Maaz Rashid—an engineer working across AI infrastructure, retrieval, and backend systems. Currently researching high-update-rate vector search at NYU Courant.</p>
+          <div class="hero-actions reveal">
+            <a class="button button-primary" href="#work">Explore my work <span>↓</span></a>
+            <a class="text-link" href="Resume.pdf" target="_blank" rel="noopener">View résumé <span>↗</span></a>
+          </div>
         </div>
+        <div class="hero-visual reveal">
+          <div class="portrait-frame">
+            <img src="Photo.jpeg" alt="Portrait of Mohammad Maaz Rashid" width="640" height="640">
+            <div class="portrait-label"><span>Based in</span><strong>NYC</strong></div>
+          </div>
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
+          <div class="visual-note note-one"><span>01</span> Systems thinker</div>
+          <div class="visual-note note-two"><span>02</span> Research → production</div>
+        </div>
+      </div>
+      <div class="proof-strip reveal" aria-label="Selected career results">
+        <div><strong>99%</strong><span>task completion<br>for multi-agent routing</span></div>
+        <div><strong>65%</strong><span>less manual<br>validation time</span></div>
+        <div><strong>0.98</strong><span>F1 on financial<br>document routing</span></div>
+        <div><strong>25K+</strong><span>customer records<br>automatically evaluated</span></div>
+      </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="skills-section">
-        <div class="container">
-            <h2 class="section-title">Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-table">
-                        <div class="skill-item">Python</div>
-                        <div class="skill-item">C++</div>
-                        <div class="skill-item">TypeScript</div>
-                        <div class="skill-item">SQL</div>
-                        <div class="skill-item">Bash</div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>ML & GenAI</h3>
-                    <div class="skill-table">
-                        <div class="skill-item models-skill">
-                            Models
-                        </div>
-                        <div class="skill-item">PyTorch</div>
-                        <div class="skill-item">Transformers</div>
-                        <div class="skill-item">LLM Fine-Tuning</div>
-                        <div class="skill-item">RAG</div>
-                        <div class="skill-item">LLM Evaluation</div>
-                        <div class="skill-item">LangChain</div>
-                        <div class="skill-item">ONNX Runtime</div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Retrieval & Data</h3>
-                    <div class="skill-table">
-                        <div class="skill-item">FAISS</div>
-                        <div class="skill-item">HNSW</div>
-                        <div class="skill-item">ChromaDB</div>
-                        <div class="skill-item">PGVector</div>
-                        <div class="skill-item">PostgreSQL</div>
-                        <div class="skill-item">Redis</div>
-                        <div class="skill-item">Spark</div>
-                        <div class="skill-item">Hadoop</div>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Cloud & Infrastructure</h3>
-                    <div class="skill-table">
-                        <div class="skill-item aws-skill">
-                            AWS
-                        </div>
-                        <div class="skill-item">Docker</div>
-                        <div class="skill-item">Kubernetes</div>
-                        <div class="skill-item">Git</div>
-                        <div class="skill-item">Linux</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="marquee" aria-label="Areas of expertise">
+      <div class="marquee-track">
+        <span>AI INFRASTRUCTURE</span><i>✦</i><span>VECTOR SEARCH</span><i>✦</i><span>DISTRIBUTED SYSTEMS</span><i>✦</i><span>BACKEND ENGINEERING</span><i>✦</i><span>LLM EVALUATION</span><i>✦</i>
+        <span>AI INFRASTRUCTURE</span><i>✦</i><span>VECTOR SEARCH</span><i>✦</i><span>DISTRIBUTED SYSTEMS</span><i>✦</i><span>BACKEND ENGINEERING</span><i>✦</i><span>LLM EVALUATION</span><i>✦</i>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="work-section">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <span class="date-range">2026.06 - Present</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <a href="https://www.nyu.edu/" target="_blank" rel="noopener noreferrer">
-                                <img src="logo/nyulogo.png" alt="NYU Logo" class="logo">
-                            </a>
-                        </div>
-                        <h3 class="job-title">Graduate Research Assistant</h3>
-                        <h4 class="company">NYU Courant Institute of Mathematical Sciences — Vector Databases and ANN Search</h4>
-                        <p class="job-description">
-                            Developing VecFast, a high-update-rate vector database with a two-tier ANN index: an in-memory HNSW hot tier absorbing streaming inserts and a cluster-based cold tier, merged by an adaptive centroid algorithm that detects distribution shift. Benchmarking recall-latency tradeoffs against FAISS and HNSW baselines under sustained streaming inserts on NYU HPC.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HNSW</span>
-                            <span class="tech-tag">FAISS</span>
-                            <span class="tech-tag">ANN Search</span>
-                            <span class="tech-tag">Vector Databases</span>
-                            <span class="tech-tag">C++</span>
-                        </div>
-                    </div>
-                </div>
+    <section class="work-section shell" id="work" aria-labelledby="work-title">
+      <div class="section-heading reveal">
+        <div><span class="section-index">01</span><p class="eyebrow">Selected work</p></div>
+        <h2 id="work-title">Projects where engineering depth meets practical impact.</h2>
+      </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <span class="date-range">2025.08 - 2026.05</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <a href="https://www.nyu.edu/" target="_blank" rel="noopener noreferrer">
-                                <img src="logo/nyulogo.png" alt="NYU Logo" class="logo">
-                            </a>
-                        </div>
-                        <h3 class="job-title">Graduate Teaching Assistant</h3>
-                        <h4 class="company">NYU Courant Institute of Mathematical Sciences — Computer Systems Organization</h4>
-                        <p class="job-description">
-                            Led weekly recitations for 60+ graduate students on CPU pipelines, memory hierarchy, virtual memory, and I/O systems; developed assessments with course faculty.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Computer Architecture</span>
-                            <span class="tech-tag">Systems</span>
-                            <span class="tech-tag">Teaching</span>
-                        </div>
-                    </div>
-                </div>
+      <article class="featured-project project-dark reveal">
+        <div class="project-topline"><span>Featured · 2026</span><span>WebGL / Generative AI</span></div>
+        <div class="project-body">
+          <div class="project-copy">
+            <h3>ShaderLab</h3>
+            <p class="project-kicker">A generative GPU image editor in the browser.</p>
+            <p>Natural-language edits become validated GLSL shader passes. Every adjustment runs through a linear-space, premultiplied-alpha WebGL2 pipeline—fast enough to feel instant, rigorous enough to reject broken shaders before they render.</p>
+            <ul class="tag-list" aria-label="Technologies">
+              <li>TypeScript</li><li>React</li><li>WebGL2</li><li>GLSL</li>
+            </ul>
+            <a class="project-link" href="https://shaderlab-ten.vercel.app/" target="_blank" rel="noopener">Launch live project <span>↗</span></a>
+          </div>
+          <div class="shader-demo" aria-hidden="true">
+            <div class="shader-window">
+              <div class="window-bar"><span></span><span></span><span></span><b>shader.frag</b></div>
+              <pre><code><i>uniform</i> sampler2D image;
+<i>uniform</i> float intensity;
 
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <span class="date-range">2025.05 - 2025.08</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <a href="https://www.qualcomm.com/" target="_blank" rel="noopener noreferrer">
-                                <img src="logo/Qualcommlogo.png" alt="Qualcomm Logo" class="logo">
-                            </a>
-                        </div>
-                        <h3 class="job-title">Machine Learning Intern</h3>
-                        <h4 class="company">Qualcomm</h4>
-                        <p class="job-description">
-                            Fine-tuned Qwen and integrated a retrieval layer into the modem-framework QA pipeline to automate test-scenario validation across 9 internal test suites, reducing manual validation time by 65%. Developed an LLM evaluation workflow measuring response quality, prompt efficiency, and redundant API calls, cutting LLM operating cost by 30%. Architected a multi-agent orchestration layer coordinating six specialized workers, routed by confidence-based intent classification, reaching 99% task completion. Engineered a distributed telemetry pipeline ingesting multiple gigabytes of daily device data into AWS S3 and processing it on AWS EMR via parallel Hadoop MapReduce jobs over HDFS, cutting telemetry-analysis turnaround by 35%.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Qwen</span>
-                            <span class="tech-tag">Multi-Agent Orchestration</span>
-                            <span class="tech-tag">AWS S3</span>
-                            <span class="tech-tag">AWS EMR</span>
-                            <span class="tech-tag">Apache Hadoop</span>
-                            <span class="tech-tag">Spark</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <span class="date-range">2022.08 - 2024.06</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <a href="https://home.barclays/" target="_blank" rel="noopener noreferrer">
-                                <img src="logo/barclayslogo.png" alt="Barclays Logo" class="logo barclays-logo">
-                            </a>
-                        </div>
-                        <h3 class="job-title">Software Engineer</h3>
-                        <h4 class="company">Barclays</h4>
-                        <p class="job-description">
-                            Fine-tuned FinBERT and Instructor-XL for financial-document classification and semantic retrieval using few-shot and post-training techniques, achieving 0.98 F1 on a held-out routing test set. Integrated ChromaDB-backed semantic retrieval into enterprise AI workflows supporting a platform credited with eight-figure business impact. Developed LLM-powered chatbots, entity extraction, document search, and summarization tools, reducing manual workload by 45%. Automated performance evaluation across 25,000+ customer records, cutting end-to-end analysis time from days to seconds. Engineered the FastAPI backend for a batch-pricing tool processing thousands of user queries in parallel.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">FinBERT</span>
-                            <span class="tech-tag">Instructor-XL</span>
-                            <span class="tech-tag">ChromaDB</span>
-                            <span class="tech-tag">FastAPI</span>
-                            <span class="tech-tag">AWS S3</span>
-                            <span class="tech-tag">AWS Glue</span>
-                            <span class="tech-tag">AWS EMR</span>
-                        </div>
-                    </div>
-                </div>
+<b>void</b> main() {
+  vec4 color = texture(
+    image, v_uv
+  );
+  color.rgb = mix(
+    color.rgb,
+    pow(color.rgb, vec3(.8)),
+    intensity
+  );
+}</code></pre>
             </div>
+            <div class="shader-glow"></div>
+            <span class="demo-chip">60 FPS</span>
+          </div>
         </div>
+      </article>
+
+      <div class="project-grid">
+        <article class="project-card project-lime reveal">
+          <div class="project-number">02 / 03</div>
+          <div>
+            <p class="eyebrow">Edge AI · 2025</p>
+            <h3>Focus Assist</h3>
+            <p>Thread-safe Pomodoro tracking with on-device NPU inference for Snapdragon X Elite laptops.</p>
+            <p class="award">🏆 Winner, Qualcomm HaQathon</p>
+          </div>
+          <div>
+            <ul class="tag-list"><li>Python</li><li>ONNX</li><li>Edge AI</li></ul>
+            <a class="project-link" href="https://github.com/codeholic08/Focus-Assist" target="_blank" rel="noopener">View repository <span>↗</span></a>
+          </div>
+        </article>
+        <article class="project-card project-paper reveal">
+          <div class="project-number">03 / 03</div>
+          <div>
+            <p class="eyebrow">Deep Learning · 2024</p>
+            <h3>Lean ResNet</h3>
+            <p>Reworked channels, filters, and skip connections to produce a sub-5M parameter classifier with 87% test accuracy.</p>
+          </div>
+          <div>
+            <ul class="tag-list"><li>PyTorch</li><li>ResNet-50</li><li>Optimization</li></ul>
+            <a class="project-link" href="https://github.com/codeholic08/ResNetModel" target="_blank" rel="noopener">View repository <span>↗</span></a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="education-section">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <span class="date-range">2024.09 - 2026.05</span>
-                        <span class="location">New York, USA</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <a href="https://www.nyu.edu/" target="_blank" rel="noopener noreferrer">
-                                <img src="logo/nyulogo.png" alt="NYU Logo" class="logo">
-                            </a>
-                        </div>
-                        <h3 class="degree">Master of Science in Computer Science</h3>
-                        <h4 class="university">New York University</h4>
-                        <div class="coursework">
-                            <span class="course">Design and Analysis of Algorithms</span>
-                            <span class="course">Foundations of Data Science</span>
-                            <span class="course">Machine Learning</span>
-                            <span class="course">Deep Learning</span>
-                            <span class="course">Big Data</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">
-                        <span class="date-range">2018.07 - 2022.05</span>
-                        <span class="location">Chennai, India</span>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="company-logo">
-                            <a href="https://www.srmist.edu.in/" target="_blank" rel="noopener noreferrer">
-                                <img src="logo/srmlogo.png" alt="SRM Logo" class="logo">
-                            </a>
-                        </div>
-                        <h3 class="degree">Bachelor of Technology in Computer Science and Engineering</h3>
-                        <h4 class="university">SRM Institute of Science and Technology</h4>
-                        <div class="coursework">
-                            <span class="course">Data Structures</span>
-                            <span class="course">Algorithms</span>
-                            <span class="course">Software Engineering</span>
-                            <span class="course">Computer Networks</span>
-                            <span class="course">Database Systems</span>
-                            <span class="course">Machine Learning</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="shell">
+        <div class="section-heading section-heading-light reveal">
+          <div><span class="section-index">02</span><p class="eyebrow">Experience</p></div>
+          <h2 id="experience-title">Building across the stack—from research prototypes to production platforms.</h2>
         </div>
+
+        <div class="experience-list">
+          <article class="experience-row reveal">
+            <div class="experience-date">JUN 2026 — NOW</div>
+            <div class="experience-role">
+              <div class="company-mark"><img src="logo/nyulogo.png" alt=""></div>
+              <div><h3>Graduate Research Assistant</h3><p>NYU Courant · Vector Databases & ANN Search</p></div>
+            </div>
+            <div class="experience-detail">
+              <p>Developing <strong>VecFast</strong>, a two-tier ANN index combining an in-memory HNSW hot tier with a cluster-based cold tier and adaptive distribution-shift detection.</p>
+              <ul class="tag-list"><li>HNSW</li><li>FAISS</li><li>C++</li><li>HPC</li></ul>
+            </div>
+          </article>
+          <article class="experience-row reveal">
+            <div class="experience-date">MAY — AUG 2025</div>
+            <div class="experience-role">
+              <div class="company-mark"><img src="logo/Qualcommlogo.png" alt=""></div>
+              <div><h3>Machine Learning Intern</h3><p>Qualcomm</p></div>
+            </div>
+            <div class="experience-detail">
+              <p>Built RAG, evaluation, and six-agent orchestration systems for modem QA; reduced manual validation by <strong>65%</strong>, LLM cost by <strong>30%</strong>, and telemetry analysis time by <strong>35%</strong>.</p>
+              <ul class="tag-list"><li>Qwen</li><li>Multi-agent</li><li>AWS EMR</li><li>Hadoop</li></ul>
+            </div>
+          </article>
+          <article class="experience-row reveal">
+            <div class="experience-date">AUG 2022 — JUN 2024</div>
+            <div class="experience-role">
+              <div class="company-mark"><img src="logo/barclayslogo.png" alt=""></div>
+              <div><h3>Software Engineer</h3><p>Barclays</p></div>
+            </div>
+            <div class="experience-detail">
+              <p>Shipped financial NLP, semantic search, and FastAPI services. Reached <strong>0.98 F1</strong> on document routing and automated evaluation across more than <strong>25,000</strong> customer records.</p>
+              <ul class="tag-list"><li>FinBERT</li><li>ChromaDB</li><li>FastAPI</li><li>Spark</li></ul>
+            </div>
+          </article>
+          <article class="experience-row reveal">
+            <div class="experience-date">AUG 2025 — MAY 2026</div>
+            <div class="experience-role">
+              <div class="company-mark"><img src="logo/nyulogo.png" alt=""></div>
+              <div><h3>Graduate Teaching Assistant</h3><p>NYU Courant · Computer Systems</p></div>
+            </div>
+            <div class="experience-detail">
+              <p>Led weekly recitations for 60+ graduate students on CPU pipelines, memory hierarchy, virtual memory, and I/O systems.</p>
+              <ul class="tag-list"><li>Architecture</li><li>Systems</li><li>Teaching</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="work-section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ai">AI / ML</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="systems">Systems</button>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item" data-category="web ai">
-                    <div class="timeline-date">
-                        <span class="date-range">2026</span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">
-                            <a href="https://shaderlab-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                ShaderLab – Generative GPU Image Editor
-                            </a>
-                        </h3>
-                        <h4 class="company">Browser-Based WebGL2 Shader Compiler</h4>
-                        <p class="job-description">
-                            Developed an LLM-assisted compiler and validation layer converting natural-language edits into GLSL shader passes, rejecting shaders that fail compilation or color-correctness checks before rendering. Engineered a browser-based image editor on raw WebGL2, representing each adjustment as a reorderable GPU shader pass over a linear-space, premultiplied-alpha rendering pipeline.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">WebGL2</span>
-                            <span class="tech-tag">GLSL</span>
-                            <span class="tech-tag">Vite</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-category="systems ai">
-                    <div class="timeline-date">
-                        <span class="date-range">2025</span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">
-                            <a href="https://github.com/codeholic08/Focus-Assist" target="_blank" rel="noopener noreferrer" class="project-link">
-                                Focus Assist – AI-Powered Pomodoro Tracker
-                            </a>
-                        </h3>
-                        <h4 class="company">🏆 Winner, Qualcomm's HaQathon</h4>
-                        <p class="job-description">
-                            Built a thread-safe Pomodoro timer for Snapdragon X Elite laptops with a CLI-based task-tracking interface and on-device NPU inference through an ONNX runtime path, enabling real-time focus tracking at the edge. Built during Qualcomm's Snapdragon NPU-focused day-night hackathon.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">ONNX</span>
-                            <span class="tech-tag">Edge AI</span>
-                            <span class="tech-tag">Snapdragon X Elite</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-category="ai">
-                    <div class="timeline-date">
-                        <span class="date-range">2024</span>
-                    </div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">
-                            <a href="https://github.com/codeholic08/ResNetModel" target="_blank" rel="noopener noreferrer" class="project-link">
-                                ResNet Architecture Optimization
-                            </a>
-                        </h3>
-                        <h4 class="company">Deep Learning Research Project</h4>
-                        <p class="job-description">
-                            Enhanced a deep learning model by optimizing channels, filter sizes, and skip connections to reduce parameter count to under 5M while increasing test accuracy. Boosted ResNet-50 efficiency to 87% in classification tasks through systematic architecture improvements and hyperparameter tuning.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">ResNet-50</span>
-                            <span class="tech-tag">Computer Vision</span>
-                            <span class="tech-tag">Model Optimization</span>
-                            <span class="tech-tag">Deep Learning</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="about-section shell" id="about" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div class="about-heading reveal">
+          <span class="section-index">03</span>
+          <p class="eyebrow">How I work</p>
+          <h2 id="about-title">I like owning the whole path—from data to deployment.</h2>
         </div>
+        <div class="about-copy reveal">
+          <p class="about-lead">My work sits at the intersection of software engineering and applied machine learning. I’m most useful when a problem crosses boundaries: research and product, model and infrastructure, prototype and production.</p>
+          <p>At Barclays, that meant building FastAPI services alongside the Spark and AWS pipelines feeding them. At Qualcomm, it meant creating both the agent system and the evaluation harness that judged it. At NYU, I’m applying that same systems lens to vector search under sustained streaming updates.</p>
+          <div class="education-grid">
+            <div>
+              <span>2024 — 2026</span>
+              <strong>MS, Computer Science</strong>
+              <p>New York University</p>
+            </div>
+            <div>
+              <span>2018 — 2022</span>
+              <strong>BTech, Computer Science</strong>
+              <p>SRM Institute of Science and Technology</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="toolkit reveal">
+        <span class="toolkit-title">CURRENT TOOLKIT</span>
+        <div>
+          <span>Python</span><span>C++</span><span>TypeScript</span><span>PyTorch</span><span>Transformers</span><span>HNSW</span><span>FAISS</span><span>PostgreSQL</span><span>Redis</span><span>FastAPI</span><span>Spark</span><span>AWS</span><span>Docker</span><span>Kubernetes</span>
+        </div>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="availability-tag">// open to full-time ML, AI, Data & Software Engineering roles</p>
-                <p class="contact-description">
-                    I am available over email anytime! Feel free to reach out for opportunities, collaborations, or just to connect.
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:mr7374@nyu.edu" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>mr7374@nyu.edu</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rashid-maaz/" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/codeholic08" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.instagram.com/itsmaazr/" target="_blank" class="contact-link">
-                        <i class="fab fa-instagram"></i>
-                        <span>Instagram</span>
-                    </a>
-                    <a href="Resume.pdf" target="_blank" class="contact-link">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>Resume</span>
-                    </a>
-                </div>
-            </div>
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="shell contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Have a hard systems problem?</p>
+          <h2 id="contact-title">Let’s build something that <em>works.</em></h2>
         </div>
+        <div class="contact-side reveal">
+          <p>I’m open to full-time software, ML, AI infrastructure, and data engineering roles.</p>
+          <a class="button button-light" href="mailto:mr7374@nyu.edu">mr7374@nyu.edu <span>↗</span></a>
+        </div>
+      </div>
+      <div class="shell footer-row">
+        <p>© 2026 Mohammad Maaz Rashid</p>
+        <div>
+          <a href="https://www.linkedin.com/in/rashid-maaz/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/codeholic08" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.instagram.com/itsmaazr/" target="_blank" rel="noopener">Instagram ↗</a>
+        </div>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; Copyright 2026 Mohammad Maaz Rashid.</p>
-        </div>
-    </footer>
-
-    <!-- AWS Popup Modal -->
-    <div id="aws-popup" class="aws-popup">
-        <div class="aws-popup-backdrop"></div>
-        <div class="aws-popup-content">
-            <h4>AWS Services</h4>
-            <div class="aws-services">
-                <span>SageMaker</span>
-                <span>Lambda</span>
-                <span>EC2</span>
-                <span>ECS</span>
-                <span>Glue</span>
-                <span>EMR</span>
-                <span>Batch</span>
-                <span>Athena</span>
-                <span>Step Functions</span>
-                <span>Kinesis</span>
-                <span>Textract</span>
-                <span>EKS</span>
-                <span>IAM</span>
-                <span>Cognito</span>
-                <span>ALB</span>
-                <span>Route 53</span>
-                <span>Secrets Manager</span>
-                <span>CloudWatch</span>
-                <span>CloudFront</span>
-                <span>CloudFormation</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Models Popup Modal -->
-    <div id="models-popup" class="models-popup">
-        <div class="models-popup-backdrop"></div>
-        <div class="models-popup-content">
-            <h4>AI Models</h4>
-            <div class="models-list">
-                <span>Claude</span>
-                <span>GPT</span>
-                <span>LLaMA</span>
-                <span>Qwen</span>
-                <span>Gemini</span>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  </main>
 </body>
 </html>
