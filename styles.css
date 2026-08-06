@@ -212,9 +212,8 @@ button { font: inherit; }
 .footer-row div { display: flex; gap: 25px; }
 .footer-row > a { justify-self: end; }
 
-.fab-stack { position: fixed; right: 26px; bottom: 24px; z-index: 40; display: flex; align-items: flex-end; gap: 14px; }
-.portfolio-chat { position: relative; font-family: var(--body); }
-.back-to-top-fab { width: 52px; height: 52px; padding: 0; display: grid; place-items: center; border: 1px solid var(--ink); background: var(--paper-bright); color: var(--ink); box-shadow: 5px 5px 0 var(--ink); cursor: pointer; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease, visibility .25s; }
+.portfolio-chat { position: fixed; right: 26px; bottom: 24px; z-index: 40; font-family: var(--body); }
+.back-to-top-fab { position: fixed; left: 26px; bottom: 24px; z-index: 40; width: 52px; height: 52px; padding: 0; display: grid; place-items: center; border: 1px solid var(--ink); background: var(--paper-bright); color: var(--ink); box-shadow: 5px 5px 0 var(--ink); cursor: pointer; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease, visibility .25s; }
 .back-to-top-fab.is-visible { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
 .back-to-top-fab:hover { background: var(--ink); color: var(--lime); }
 .back-to-top-fab .icon-arrow { width: 20px; height: 20px; }
@@ -342,10 +341,10 @@ button { font: inherit; }
   .contact-section h2 { font-size: clamp(58px, 17vw, 85px); }
   .footer-row { margin-top: 90px; grid-template-columns: 1fr auto; }
   .footer-row div { grid-row: 2; grid-column: 1 / -1; flex-wrap: wrap; }
-  .fab-stack { right: 14px; bottom: 14px; gap: 10px; }
+  .portfolio-chat { right: 14px; bottom: 14px; }
+  .back-to-top-fab { left: 14px; bottom: 14px; width: 48px; height: 48px; }
   .chat-panel { position: fixed; right: 14px; bottom: 80px; width: calc(100vw - 28px); height: min(570px, calc(100dvh - 100px)); box-shadow: 6px 6px 0 var(--ink); }
   .chat-launcher { min-width: 138px; height: 48px; }
-  .back-to-top-fab { width: 48px; height: 48px; }
 }
 
 @media (max-width: 390px) {
