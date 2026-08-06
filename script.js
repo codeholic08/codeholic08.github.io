@@ -48,6 +48,18 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
+const backToTopFab = document.querySelector('[data-back-to-top]');
+if (backToTopFab) {
+  const toggleBackToTop = () => {
+    backToTopFab.classList.toggle('is-visible', window.scrollY > window.innerHeight * 0.6);
+  };
+  toggleBackToTop();
+  window.addEventListener('scroll', toggleBackToTop, { passive: true });
+  backToTopFab.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+}
+
 const chatRoot = document.querySelector('[data-portfolio-chat]');
 const chatApiUrl = chatRoot?.dataset.apiUrl?.trim();
 const chatPreview = new URLSearchParams(window.location.search).has('chat-preview');
