@@ -275,11 +275,12 @@
     </section>
   </main>
 
-  <button class="back-to-top-fab" type="button" aria-label="Back to top" data-back-to-top>
-    <span class="icon-arrow icon-arrow-up" aria-hidden="true"></span>
-  </button>
+  <div class="fab-stack">
+    <button class="back-to-top-fab" type="button" aria-label="Back to top" data-back-to-top>
+      <span class="icon-arrow icon-arrow-up" aria-hidden="true"></span>
+    </button>
 
-  <div class="portfolio-chat" data-portfolio-chat data-api-url="https://maaz-portfolio-chat.maaz-portfolio-chat.workers.dev" hidden>
+    <div class="portfolio-chat" data-portfolio-chat data-api-url="https://maaz-portfolio-chat.maaz-portfolio-chat.workers.dev" hidden>
     <button class="chat-launcher" type="button" aria-expanded="false" aria-controls="portfolio-chat-panel">
       <span class="chat-launcher-dot" aria-hidden="true"></span>
       <span>ASK MMR</span>
@@ -314,6 +315,7 @@
         <div class="chat-usage"><span data-chat-status>10 questions this session</span><span><span data-chat-length>0</span>/350</span></div>
       </form>
     </section>
+    </div>
   </div>
 </body>
 </html>
