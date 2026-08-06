@@ -14,6 +14,18 @@
   --radius: 2px;
 }
 
+.icon-arrow {
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  vertical-align: -0.05em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.icon-arrow-up { transform: rotate(-45deg); }
+.icon-arrow-down { transform: rotate(135deg); }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
@@ -222,7 +234,7 @@ button { font: inherit; }
 .chat-message-error p { border-color: #b42b2b; color: #8e2020; }
 .chat-response-links { display: grid; gap: 7px; margin-top: 7px; }
 .chat-response-links a { padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--ink); background: var(--lime); color: var(--ink); font-family: var(--mono); font-size: 11px; letter-spacing: .03em; }
-.chat-response-links a::after { content: "\2197\FE0E"; font-size: 14px; }
+.chat-response-links a::after { content: ""; display: inline-block; width: 12px; height: 12px; background-color: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='7' y1='17' x2='17' y2='7'/%3E%3Cpolyline points='7 7 17 7 17 17'/%3E%3C/svg%3E") center / contain no-repeat; }
 .chat-response-links a:hover, .chat-response-links a:focus-visible { background: var(--ink); color: var(--lime); }
 .chat-message-loading p::after { content: ""; display: inline-block; width: 16px; height: 8px; margin-left: 5px; background: radial-gradient(circle closest-side, currentColor 90%, transparent) 0 50% / 5px 5px repeat-x; animation: chat-loading .8s infinite linear; }
 @keyframes chat-loading { to { background-position: 10px 50%; } }
