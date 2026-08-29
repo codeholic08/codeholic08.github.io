@@ -195,7 +195,7 @@ button { font: inherit; }
 .education-grid span { color: var(--muted); font-family: var(--mono); font-size: 14px; }
 .education-grid strong { display: block; margin-top: 13px; font-size: 22px; }
 .education-grid p { margin: 6px 0 0; min-height: 55px; color: var(--muted); font-size: 17px; }
-.education-logo { width: auto; height: 22px; max-width: 90px; object-fit: contain; object-position: left center; margin-top: 12px; }
+.education-logo { width: auto; height: 40px; max-width: 150px; object-fit: contain; object-position: left center; margin-top: 12px; }
 .toolkit { display: grid; grid-template-columns: .3fr 1.7fr; gap: 30px; margin-top: 105px; padding-top: 30px; border-top: 1px solid var(--ink); }
 .toolkit-title { font-family: var(--mono); font-size: 14px; letter-spacing: .06em; }
 .toolkit > div { display: flex; flex-wrap: wrap; gap: 10px; }
