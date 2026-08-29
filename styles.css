@@ -87,6 +87,10 @@ button { font: inherit; }
 .hero-copy h1 { max-width: 870px; margin: 22px 0 26px; font-size: clamp(54px, 6.4vw, 98px); line-height: .97; letter-spacing: -.067em; font-weight: 600; }
 .hero-copy h1 em, .contact-section h2 em { position: relative; font-weight: 400; font-style: italic; }
 .hero-copy h1 em::after { content: ""; position: absolute; left: 1%; right: -2%; bottom: .02em; height: .12em; background: var(--lime); z-index: -1; transform: rotate(-1deg); }
+.word-pop { position: relative; display: inline-block; cursor: default; transition: transform .35s cubic-bezier(.2,.8,.2,1), color .35s ease; }
+.word-pop::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .16em; background: var(--lime); z-index: -1; transform: scaleX(0) rotate(-1deg); transform-origin: left center; transition: transform .5s cubic-bezier(.2,.85,.2,1); }
+.word-pop:hover { transform: translateY(-0.06em); }
+.word-pop:hover::after { transform: scaleX(1) rotate(-1deg); }
 .hero-intro { max-width: 670px; margin: 0; color: #4d514d; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.65; }
 .hero-actions { display: flex; align-items: center; gap: 44px; margin-top: 38px; }
 .hero-actions .button, .hero-actions .text-link { font-size: 16px; }
