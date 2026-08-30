@@ -21,6 +21,40 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 760) closeMenu();
 });
 
+const portraitCarousel = document.querySelector('[data-portrait-carousel]');
+const portraitToggles = document.querySelector('[data-portrait-toggles]');
+
+if (portraitCarousel && portraitToggles) {
+  const slides = Array.from(portraitCarousel.querySelectorAll('.portrait-slide'));
+  const toggles = Array.from(portraitToggles.querySelectorAll('.portrait-toggle'));
+  let activeSlide = slides.findIndex((slide) => slide.classList.contains('is-active'));
+  if (activeSlide < 0) activeSlide = 0;
+  let autoAdvance;
+
+  function showPortraitSlide(index) {
+    activeSlide = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === activeSlide));
+    toggles.forEach((toggle, i) => {
+      toggle.classList.toggle('is-active', i === activeSlide);
+      toggle.setAttribute('aria-selected', String(i === activeSlide));
+    });
+  }
+
+  function startPortraitAutoAdvance() {
+    window.clearInterval(autoAdvance);
+    autoAdvance = window.setInterval(() => showPortraitSlide(activeSlide + 1), 15000);
+  }
+
+  toggles.forEach((toggle, i) => {
+    toggle.addEventListener('click', () => {
+      showPortraitSlide(i);
+      startPortraitAutoAdvance();
+    });
+  });
+
+  startPortraitAutoAdvance();
+}
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealItems = document.querySelectorAll('.reveal');
 

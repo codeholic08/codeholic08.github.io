@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260829-words1">
-  <script src="script.js?v=20260829-words1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260830-carousel1">
+  <script src="script.js?v=20260830-carousel1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -67,9 +67,24 @@
           </div>
         </div>
         <div class="hero-visual reveal">
-          <div class="portrait-frame">
-            <img src="Photo.jpeg" alt="Portrait of Mohammad Maaz Rashid" width="640" height="640">
-            <div class="portrait-label"><span>Based in</span><strong>NYC</strong></div>
+          <div class="portrait-stack">
+            <div class="portrait-frame">
+              <div class="portrait-carousel" data-portrait-carousel>
+                <img src="photos/Photo.jpeg" alt="Portrait of Mohammad Maaz Rashid" width="640" height="640" class="portrait-slide is-active">
+                <img src="photos/Photo_1.jpeg" alt="Mohammad Maaz Rashid at his NYU graduation, Yankee Stadium" width="640" height="640" class="portrait-slide">
+                <img src="photos/Photo_2.jpeg" alt="Mohammad Maaz Rashid in Times Square, New York City" width="640" height="640" class="portrait-slide">
+                <img src="photos/Photo_3.jpeg" alt="Mohammad Maaz Rashid at his NYU graduation, Washington Square Arch" width="640" height="640" class="portrait-slide">
+                <img src="photos/Photo_4.jpeg" alt="Mohammad Maaz Rashid at Citi Field, New York" width="640" height="640" class="portrait-slide">
+              </div>
+              <div class="portrait-label"><span>Based in</span><strong>NYC</strong></div>
+            </div>
+            <div class="portrait-toggles" data-portrait-toggles role="tablist" aria-label="Choose portrait photo">
+              <button type="button" class="portrait-toggle is-active" data-slide-index="0" aria-label="Show photo 1" aria-selected="true"></button>
+              <button type="button" class="portrait-toggle" data-slide-index="1" aria-label="Show photo 2" aria-selected="false"></button>
+              <button type="button" class="portrait-toggle" data-slide-index="2" aria-label="Show photo 3" aria-selected="false"></button>
+              <button type="button" class="portrait-toggle" data-slide-index="3" aria-label="Show photo 4" aria-selected="false"></button>
+              <button type="button" class="portrait-toggle" data-slide-index="4" aria-label="Show photo 5" aria-selected="false"></button>
+            </div>
           </div>
           <div class="orbit orbit-one" aria-hidden="true"></div>
           <div class="orbit orbit-two" aria-hidden="true"></div>

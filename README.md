@@ -7,7 +7,7 @@ Personal portfolio for Mohammad Maaz Rashid, a software and machine learning eng
 - `index.html` contains the semantic page content and metadata.
 - `styles.css` contains the responsive editorial design system.
 - `script.js` handles mobile navigation, smooth navigation, and reveal effects.
-- `Photo.jpeg` is the profile portrait.
+- `photos/` holds the hero portrait carousel images (`Photo.jpeg`, `Photo_1.jpeg`–`Photo_4.jpeg`).
 - `Resume.pdf` is the downloadable résumé.
 - `og.png` is the social sharing card.
 
