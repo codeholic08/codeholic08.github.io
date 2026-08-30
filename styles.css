@@ -182,7 +182,6 @@ button { font: inherit; }
 
 .experience-section { padding-block: 125px; color: white; background: var(--ink); }
 .section-heading-light { border-bottom: 1px solid var(--line-light); padding-bottom: 65px; }
-.experience-list { border-top: 1px solid var(--line-light); }
 .experience-row { display: grid; grid-template-columns: .7fr 1.25fr 1.6fr; align-items: start; gap: 35px; padding: 52px 0; border-bottom: 1px solid var(--line-light); }
 .experience-date { color: #abb2ac; font-family: var(--mono); font-size: 15px; line-height: 1.4; letter-spacing: .06em; }
 .experience-role { display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: start; }
